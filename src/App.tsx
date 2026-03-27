@@ -479,11 +479,6 @@ export default function App() {
     );
   }, [filtered, pubStatus, quickFilter]);
 
-  const visiblePubs = useMemo(() => {
-    if (!selectedPub) return filteredPanelPubs;
-    return filteredPanelPubs.some((pub) => pub.id === selectedPub.id) ? filteredPanelPubs : [selectedPub, ...filteredPanelPubs];
-  }, [filteredPanelPubs, selectedPub]);
-
   function updatePreviewFromDrag(nextSliderValue: number) {
     const clampedValue = Math.max(0, Math.min(Math.max(0, previewGrid.length - 1), nextSliderValue));
     const next = previewGrid[clampedValue];
@@ -559,7 +554,7 @@ export default function App() {
       <main className="mapWrap">
         <Suspense fallback={<div className="mapSkeleton">Loading map...</div>}>
           <PubMap
-            pubs={visiblePubs}
+            pubs={pubsSorted}
             selectedPub={selectedPub}
             selectedAnchor={selectedDisplayPoint}
             selectedRecenterTick={selectedRecenterTick}
