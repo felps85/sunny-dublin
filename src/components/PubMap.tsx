@@ -1,7 +1,7 @@
 import maplibregl, { type Map as MapLibreMap, type StyleSpecification } from "maplibre-gl";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { materialIconPath } from "./MaterialIcon";
-import type { LatLon, Pub } from "../types";
+import type { LatLon, MapViewport, Pub } from "../types";
 
 const FALLBACK_BASEMAP_STYLE: StyleSpecification = {
   version: 8,
@@ -40,13 +40,17 @@ export default function PubMap(props: {
   selectedPopover?: React.ReactNode;
   userLocation?: { lat: number; lon: number } | null;
   userRecenterTick?: number;
+  regionFocus?: { center: LatLon; zoom: number } | null;
+  regionFocusTick?: number;
   selectedSunBearingDeg?: number;
   selectedFrontBearingDeg?: number;
+  onViewportChange?: (viewport: MapViewport) => void;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const latestPropsRef = useRef(props);
+  const lastAutoFitPubCountRef = useRef(0);
   const selectedPub = props.selectedPub ?? null;
   latestPropsRef.current = props;
   const [popoverPlacement, setPopoverPlacement] = useState<"above" | "below">("above");
@@ -102,6 +106,21 @@ export default function PubMap(props: {
     setPopoverStyle({ left, top });
   }, [props.popoverAnchor, props.selectedAnchor, props.selectedPopover, selectedPub]);
 
+  const publishViewport = useCallback(() => {
+    const map = mapRef.current;
+    if (!map || !props.onViewportChange) return;
+    const bounds = map.getBounds();
+    const center = map.getCenter();
+    props.onViewportChange({
+      center: { lat: center.lat, lon: center.lng },
+      north: bounds.getNorth(),
+      south: bounds.getSouth(),
+      east: bounds.getEast(),
+      west: bounds.getWest(),
+      zoom: map.getZoom()
+    });
+  }, [props.onViewportChange]);
+
   useEffect(() => {
     if (!containerRef.current) return;
     if (mapRef.current) return;
@@ -124,13 +143,14 @@ export default function PubMap(props: {
       syncPubPinSource(map, buildFeatureCollection(pubPinFeatures));
       syncUserLocationSource(map, props.userLocation);
       registerPubPinInteractions(map, latestPropsRef);
+      publishViewport();
     });
     mapRef.current = map;
     return () => {
       map.remove();
       mapRef.current = null;
     };
-  }, []);
+  }, [publishViewport]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -142,6 +162,40 @@ export default function PubMap(props: {
     syncPubPinSource(map, buildFeatureCollection(pubPinFeatures));
     syncUserLocationSource(map, props.userLocation);
   }, [props.userLocation, pubPinFeatures]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !map.isStyleLoaded()) return;
+    if (selectedPub || props.userLocation || props.pubs.length === 0) return;
+    if (props.pubs.length <= lastAutoFitPubCountRef.current) return;
+
+    const bounds = new maplibregl.LngLatBounds();
+    for (const pub of props.pubs) {
+      const anchor = getPubAnchorLatLon(pub);
+      bounds.extend([anchor.lon, anchor.lat]);
+    }
+
+    if (bounds.isEmpty()) return;
+
+    lastAutoFitPubCountRef.current = props.pubs.length;
+    map.fitBounds(bounds, {
+      padding: { top: 92, right: 28, bottom: 88, left: 28 },
+      duration: 0,
+      maxZoom: 11.4
+    });
+  }, [props.pubs, props.userLocation, selectedPub]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const handleMoveEnd = () => publishViewport();
+    map.on("moveend", handleMoveEnd);
+    map.on("zoomend", handleMoveEnd);
+    return () => {
+      map.off("moveend", handleMoveEnd);
+      map.off("zoomend", handleMoveEnd);
+    };
+  }, [publishViewport]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -181,6 +235,18 @@ export default function PubMap(props: {
       map.off("resize", update);
     };
   }, [props.selectedPopover, updateSelectedPopoverPosition]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !props.regionFocus) return;
+    if (selectedPub) return;
+
+    map.easeTo({
+      center: [props.regionFocus.center.lon, props.regionFocus.center.lat],
+      zoom: props.regionFocus.zoom,
+      duration: 450
+    });
+  }, [props.regionFocus, props.regionFocusTick, selectedPub]);
 
   useEffect(() => {
     if (!props.selectedPopover || !props.onClosePopover) return;
@@ -324,6 +390,29 @@ function registerPubPinInteractions(
     const id = event.features?.[0]?.properties?.id;
     if (typeof id === "string") latestPropsRef.current.onSelect(id);
   };
+  const clusterClickHandler = (event: maplibregl.MapMouseEvent & { features?: GeoJSON.Feature[] }) => {
+    const feature = event.features?.[0];
+    if (!feature || feature.geometry.type !== "Point") return;
+    const coordinates = feature.geometry.coordinates as [number, number];
+    const clusterId = feature.properties?.cluster_id;
+    const source = map.getSource("pub-pins") as
+      | (maplibregl.GeoJSONSource & {
+          getClusterExpansionZoom?: (clusterId: number, callback: (error: Error | null, zoom: number) => void) => void;
+        })
+      | undefined;
+
+    if (typeof clusterId !== "number" || !source?.getClusterExpansionZoom) {
+      const [lon, lat] = coordinates;
+      map.easeTo({ center: [lon, lat], zoom: Math.max(map.getZoom() + 2, 7), duration: 350 });
+      return;
+    }
+
+    source.getClusterExpansionZoom(clusterId, (error, zoom) => {
+      if (error) return;
+      const [lon, lat] = coordinates;
+      map.easeTo({ center: [lon, lat], zoom, duration: 350 });
+    });
+  };
   const enterHandler = () => {
     map.getCanvas().style.cursor = "pointer";
   };
@@ -333,14 +422,17 @@ function registerPubPinInteractions(
 
   map.on("click", "pub-pins-layer", clickHandler);
   map.on("click", "selected-pub-pin-layer", clickHandler);
+  map.on("click", "pub-pins-cluster-layer", clusterClickHandler);
   map.on("click", "user-location-layer", () => {
     latestPropsRef.current.onSelectUserLocation?.();
   });
   map.on("mouseenter", "pub-pins-layer", enterHandler);
   map.on("mouseenter", "selected-pub-pin-layer", enterHandler);
+  map.on("mouseenter", "pub-pins-cluster-layer", enterHandler);
   map.on("mouseenter", "user-location-layer", enterHandler);
   map.on("mouseleave", "pub-pins-layer", leaveHandler);
   map.on("mouseleave", "selected-pub-pin-layer", leaveHandler);
+  map.on("mouseleave", "pub-pins-cluster-layer", leaveHandler);
   map.on("mouseleave", "user-location-layer", leaveHandler);
 }
 
@@ -348,7 +440,42 @@ function ensurePubPinLayers(map: MapLibreMap) {
   if (!map.getSource("pub-pins")) {
     map.addSource("pub-pins", {
       type: "geojson",
-      data: emptyFeatureCollection()
+      data: emptyFeatureCollection(),
+      cluster: true,
+      clusterRadius: 54,
+      clusterMaxZoom: 10
+    });
+  }
+
+  if (!map.getLayer("pub-pins-cluster-layer")) {
+    map.addLayer({
+      id: "pub-pins-cluster-layer",
+      type: "circle",
+      source: "pub-pins",
+      filter: ["has", "point_count"],
+      paint: {
+        "circle-color": "rgba(32, 39, 54, 0.92)",
+        "circle-stroke-color": "rgba(255, 255, 255, 0.18)",
+        "circle-stroke-width": 1.5,
+        "circle-radius": ["step", ["get", "point_count"], 20, 10, 24, 25, 28, 50, 32]
+      }
+    });
+  }
+
+  if (!map.getLayer("pub-pins-cluster-count-layer")) {
+    map.addLayer({
+      id: "pub-pins-cluster-count-layer",
+      type: "symbol",
+      source: "pub-pins",
+      filter: ["has", "point_count"],
+      layout: {
+        "text-field": ["get", "point_count_abbreviated"],
+        "text-font": ["Arial Unicode MS Bold"],
+        "text-size": 12
+      },
+      paint: {
+        "text-color": "rgba(255, 255, 255, 0.96)"
+      }
     });
   }
 
@@ -357,7 +484,7 @@ function ensurePubPinLayers(map: MapLibreMap) {
       id: "pub-pins-layer",
       type: "symbol",
       source: "pub-pins",
-      filter: ["==", ["get", "selected"], 0],
+      filter: ["all", ["!", ["has", "point_count"]], ["==", ["get", "selected"], 0]],
       layout: {
         "icon-image": ["get", "icon"],
         "icon-anchor": "center",
@@ -372,7 +499,7 @@ function ensurePubPinLayers(map: MapLibreMap) {
       id: "selected-pub-pin-layer",
       type: "symbol",
       source: "pub-pins",
-      filter: ["==", ["get", "selected"], 1],
+      filter: ["all", ["!", ["has", "point_count"]], ["==", ["get", "selected"], 1]],
       layout: {
         "icon-image": ["get", "icon"],
         "icon-anchor": "center",

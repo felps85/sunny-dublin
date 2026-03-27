@@ -44,6 +44,15 @@ export type Interval = {
 
 export type LatLon = { lat: number; lon: number };
 
+export type MapViewport = {
+  center: LatLon;
+  north: number;
+  south: number;
+  east: number;
+  west: number;
+  zoom: number;
+};
+
 export type EntrancePoint = {
   location: LatLon;
   kind: "main" | "secondary";

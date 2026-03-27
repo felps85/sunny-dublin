@@ -1,17 +1,27 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const OUT_PATH = path.resolve(process.cwd(), "public/pubs.json");
+const OUT_PATH = path.resolve(process.cwd(), process.argv[2] ?? "public/pubs.json");
 const CURATED_PUBS_PATH = path.resolve(process.cwd(), "scripts/curated-pubs.json");
 const DUBLIN_CENTER = { lat: 53.3498, lon: -6.2603 };
-const IMPORT_RADIUS_M = 15_000;
-const TILE_COLS = 4;
-const TILE_ROWS = 4;
+const IMPORT_BOUNDS = {
+  south: 51.35,
+  north: 55.45,
+  west: -10.75,
+  east: -5.2
+};
+const TILE_COLS = 5;
+const TILE_ROWS = 6;
 const ROAD_CONTEXT_RADIUS_M = 120;
 const BUILDING_CONTEXT_RADIUS_M = 90;
 const OVERPASS_TIMEOUT_S = 90;
+const INCLUDE_ROAD_CONTEXT = false;
+const INCLUDE_BUILDING_CONTEXT = false;
 
 const OVERPASS_ENDPOINTS = [
+  "https://h24.atownsend.org.uk/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter",
+  "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
   "https://overpass-api.de/api/interpreter",
   "https://lz4.overpass-api.de/api/interpreter",
   "https://overpass.kumi.systems/api/interpreter"
@@ -62,6 +72,11 @@ function clamp(value, min, max) {
 function wrap360(deg) {
   const x = deg % 360;
   return x < 0 ? x + 360 : x;
+}
+
+function bearingDiff(a, b) {
+  const diff = Math.abs(wrap360(a - b));
+  return diff > 180 ? 360 - diff : diff;
 }
 
 function toLocalXYMeters(point, ref) {
@@ -149,11 +164,8 @@ function parseNumberLike(raw) {
 }
 
 function defaultHeightMForPoint(point) {
-  const distanceToCenterM = haversineDistanceM(point, DUBLIN_CENTER);
-  if (distanceToCenterM < 1500) return 19;
-  if (distanceToCenterM < 3500) return 16;
-  if (distanceToCenterM < 7000) return 13;
-  return 10;
+  void point;
+  return 12;
 }
 
 function parseHeightM(tags, point) {
@@ -242,9 +254,9 @@ function deriveFrontBearing(pub, roadMatch) {
 
   const optionA = wrap360(roadMatch.segmentBearingDeg + 90);
   const optionB = wrap360(roadMatch.segmentBearingDeg - 90);
-  const towardCenter = bearingFromTo(pub, DUBLIN_CENTER);
-  const diffA = Math.abs(wrap360(optionA - towardCenter));
-  const diffB = Math.abs(wrap360(optionB - towardCenter));
+  const towardRoad = bearingFromTo(pub, roadMatch.point);
+  const diffA = bearingDiff(optionA, towardRoad);
+  const diffB = bearingDiff(optionB, towardRoad);
   return diffA <= diffB ? optionA : optionB;
 }
 
@@ -266,13 +278,12 @@ function inferLocalBuildingHeight(pub, roadMatch, buildings) {
 }
 
 function inferShadeClearanceDeg(pub, roadMatch, localHeightM) {
+  if (!roadMatch) return 10;
   const roadWidthM = roadWidthForHighway(roadMatch?.highway);
   const pubSetbackM = roadMatch ? clamp(roadMatch.distanceM, 0, 6) : 3;
   const effectiveWidthM = Math.max(roadWidthM - pubSetbackM * 0.35, 4.5);
   const clearanceDeg = (Math.atan2(localHeightM * 0.82, effectiveWidthM) * 180) / Math.PI;
-  const centerDistanceM = haversineDistanceM(pub, DUBLIN_CENTER);
-  const coreBoostDeg = centerDistanceM < 1800 ? 2 : centerDistanceM < 3500 ? 1 : 0;
-  return clamp(clearanceDeg + coreBoostDeg, 5, 30);
+  return clamp(clearanceDeg, 5, 30);
 }
 
 function normalizeRoad(el) {
@@ -379,11 +390,13 @@ function pubsContextQuery({ tile, includeBuildings }) {
 )->.pubs;
 `;
 
-  const roadsBlock = `
+  const roadsBlock = INCLUDE_ROAD_CONTEXT
+    ? `
 (
   way["highway"~"^(primary|secondary|tertiary|unclassified|residential|living_street|service|pedestrian|footway)$"](around.pubs:${ROAD_CONTEXT_RADIUS_M});
 )->.roads;
-`;
+`
+    : "";
 
   const buildingsBlock = includeBuildings
     ? `
@@ -401,17 +414,20 @@ function pubsContextQuery({ tile, includeBuildings }) {
 ${pubsBlock}
 ${roadsBlock}
 ${buildingsBlock}
-(${includeBuildings ? ".pubs; .roads; .buildings;" : ".pubs; .roads;"} );
+(${includeBuildings ? ".pubs; .roads; .buildings;" : INCLUDE_ROAD_CONTEXT ? ".pubs; .roads;" : ".pubs;"} );
 out center geom tags;
 `;
 }
 
 async function fetchTileElements(tile, depth = 0) {
   try {
-    const json = await fetchOverpassJson(pubsContextQuery({ tile, includeBuildings: true }), `${tile.key}:full`);
+    const json = await fetchOverpassJson(
+      pubsContextQuery({ tile, includeBuildings: INCLUDE_BUILDING_CONTEXT }),
+      `${tile.key}:${INCLUDE_BUILDING_CONTEXT ? "full" : "roads-only"}`
+    );
     const elements = Array.isArray(json.elements) ? json.elements : [];
-    console.log(`[${tile.key}] fetched ${elements.length} elements (roads + buildings)`);
-    return { elements, roadsOnlyTiles: 0, skippedTiles: 0 };
+    console.log(`[${tile.key}] fetched ${elements.length} elements (${INCLUDE_BUILDING_CONTEXT ? "roads + buildings" : "roads only"})`);
+    return { elements, roadsOnlyTiles: INCLUDE_BUILDING_CONTEXT ? 0 : 1, skippedTiles: 0 };
   } catch (fullError) {
     try {
       const json = await fetchOverpassJson(pubsContextQuery({ tile, includeBuildings: false }), `${tile.key}:roads-only`);
@@ -453,8 +469,7 @@ async function fetchTileElements(tile, depth = 0) {
 
 async function main() {
   const curatedPubs = await readCuratedPubs();
-  const bounds = bboxAroundCenter(DUBLIN_CENTER, IMPORT_RADIUS_M);
-  const tiles = splitBounds(bounds, TILE_ROWS, TILE_COLS);
+  const tiles = splitBounds(IMPORT_BOUNDS, TILE_ROWS, TILE_COLS);
   const rawPubs = [];
   const roads = [];
   const buildings = [];
