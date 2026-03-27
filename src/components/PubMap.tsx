@@ -447,8 +447,8 @@ function ensurePubPinLayers(map: MapLibreMap) {
       type: "geojson",
       data: emptyFeatureCollection(),
       cluster: true,
-      clusterRadius: 54,
-      clusterMaxZoom: 13
+      clusterRadius: 38,
+      clusterMaxZoom: 11
     });
   }
 

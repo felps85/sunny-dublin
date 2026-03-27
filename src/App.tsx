@@ -502,6 +502,15 @@ export default function App() {
     setRegionId((current) => (current === nextRegion ? current : nextRegion));
   }, [mapViewport?.center.lat, mapViewport?.center.lon]);
 
+  useEffect(() => {
+    if (!selectedPub) return;
+    if (regionId === "all") return;
+    if (pointInRegion(getPubAnchor(selectedPub), regionId)) return;
+    setSelectedId(null);
+    setShowSunChase(false);
+    setShowUserLocationPopover(false);
+  }, [regionId, selectedPub]);
+
   function getPubBearing(pub: Pub) {
     return bearingOverrides[pub.id] ?? pub.frontBearingDeg;
   }
@@ -1212,6 +1221,15 @@ export default function App() {
     setShowTimeSlider(false);
   }
 
+  function handleRegionChange(nextRegionId: (typeof REGION_OPTIONS)[number]["id"]) {
+    setRegionId(nextRegionId);
+    setSelectedId(null);
+    setShowSunChase(false);
+    setShowUserLocationPopover(false);
+    setRegionFocusTick((value) => value + 1);
+    handleSearchActivate();
+  }
+
   function handleTimeChipClick() {
     if (suppressTimeClickRef.current) {
       suppressTimeClickRef.current = false;
@@ -1286,9 +1304,7 @@ export default function App() {
                     className="toolbarRegionSelect"
                     value={regionId}
                     onChange={(e) => {
-                      setRegionId(e.target.value as (typeof REGION_OPTIONS)[number]["id"]);
-                      setRegionFocusTick((value) => value + 1);
-                      handleSearchActivate();
+                      handleRegionChange(e.target.value as (typeof REGION_OPTIONS)[number]["id"]);
                     }}
                     aria-label="Select region"
                   >
