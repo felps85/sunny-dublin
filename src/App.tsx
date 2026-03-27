@@ -18,6 +18,7 @@ import MaterialIcon from "./components/MaterialIcon";
 
 const IRELAND_CENTER = { lat: 53.425, lon: -7.9441 };
 const IRELAND_BOUNDS = { south: 51.35, north: 55.43, west: -10.85, east: -5.25 };
+const APP_BASE_PATH = import.meta.env.BASE_URL || "/";
 const PubMap = lazy(() => import("./components/PubMap"));
 const FORECAST_CACHE_MS = 15 * 60_000;
 const ADDRESS_CACHE_MS = 7 * 24 * 60 * 60_000;
@@ -343,6 +344,24 @@ function boundsFromPoints(points: LatLon[]) {
   );
 }
 
+function boundsIntersect(
+  a: { south: number; north: number; west: number; east: number },
+  b: { south: number; north: number; west: number; east: number }
+) {
+  return !(a.east < b.west || a.west > b.east || a.north < b.south || a.south > b.north);
+}
+
+function countVisibleRegions(viewport: MapViewport | null) {
+  if (!viewport) return 0;
+  const viewportBounds = {
+    south: viewport.south,
+    north: viewport.north,
+    west: viewport.west,
+    east: viewport.east
+  };
+  return REGION_OPTIONS.filter((option) => option.id !== "all" && option.bounds && boundsIntersect(option.bounds, viewportBounds)).length;
+}
+
 function getRegionFocus(regionId: (typeof REGION_OPTIONS)[number]["id"], pubs: Pub[]) {
   if (regionId === "all") {
     const allPoints = pubs.map(getPubAnchor);
@@ -409,7 +428,7 @@ export default function App() {
   useEffect(() => {
     let cancelled = false;
     const loadPubs = async () => {
-      const candidates = ["/pubs-ireland-lite.json", "/pubs-ireland.json", "/pubs.json"];
+      const candidates = ["pubs-ireland-lite.json", "pubs-ireland.json", "pubs.json"].map((path) => `${APP_BASE_PATH}${path}`);
       let json: unknown = null;
 
       for (const candidate of candidates) {
@@ -546,6 +565,10 @@ export default function App() {
     return regionId === "all" ? pubsSorted : pubsSorted.filter((pub) => pointInRegion(getPubAnchor(pub), regionId));
   }, [pubsSorted, regionId]);
   const regionFocus = useMemo(() => getRegionFocus(regionId, pubs), [pubs, regionId]);
+  const shouldClusterPubs = useMemo(() => {
+    if (!mapViewport) return regionId === "all";
+    return countVisibleRegions(mapViewport) > 1;
+  }, [mapViewport, regionId]);
 
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
@@ -1263,6 +1286,7 @@ export default function App() {
             userRecenterTick={userRecenterTick}
             regionFocus={regionFocus}
             regionFocusTick={regionFocusTick}
+            shouldCluster={shouldClusterPubs}
             selectedSunBearingDeg={selectedSunBearing}
             selectedFrontBearingDeg={selectedBearing}
             onViewportChange={setMapViewport}

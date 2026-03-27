@@ -43,6 +43,7 @@ export default function PubMap(props: {
   userRecenterTick?: number;
   regionFocus?: { bounds: { south: number; north: number; west: number; east: number }; maxZoom?: number } | null;
   regionFocusTick?: number;
+  shouldCluster?: boolean;
   selectedSunBearingDeg?: number;
   selectedFrontBearingDeg?: number;
   onViewportChange?: (viewport: MapViewport) => void;
@@ -139,7 +140,7 @@ export default function PubMap(props: {
       ensurePubPinImages(map);
       ensureUserLocationImage(map);
       ensureOverlayLayers(map);
-      ensurePubPinLayers(map);
+      ensurePubPinLayers(map, props.shouldCluster ?? false);
       ensureUserLocationLayer(map);
       syncPubPinSource(map, buildFeatureCollection(pubPinFeatures));
       syncUserLocationSource(map, props.userLocation, props.userLocationStatus);
@@ -158,11 +159,11 @@ export default function PubMap(props: {
     if (!map || !map.isStyleLoaded()) return;
     ensurePubPinImages(map);
     ensureUserLocationImage(map);
-    ensurePubPinLayers(map);
+    ensurePubPinLayers(map, props.shouldCluster ?? false);
     ensureUserLocationLayer(map);
     syncPubPinSource(map, buildFeatureCollection(pubPinFeatures));
     syncUserLocationSource(map, props.userLocation, props.userLocationStatus);
-  }, [props.userLocation, props.userLocationStatus, pubPinFeatures]);
+  }, [props.shouldCluster, props.userLocation, props.userLocationStatus, pubPinFeatures]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -425,23 +426,26 @@ function registerPubPinInteractions(
     map.getCanvas().style.cursor = "";
   };
 
-  map.on("click", "pub-pins-layer", clickHandler);
+  map.on("click", "pub-pins-layer-clustered", clickHandler);
+  map.on("click", "pub-pins-layer-flat", clickHandler);
   map.on("click", "selected-pub-pin-layer", clickHandler);
   map.on("click", "pub-pins-cluster-layer", clusterClickHandler);
   map.on("click", "user-location-layer", () => {
     latestPropsRef.current.onSelectUserLocation?.();
   });
-  map.on("mouseenter", "pub-pins-layer", enterHandler);
+  map.on("mouseenter", "pub-pins-layer-clustered", enterHandler);
+  map.on("mouseenter", "pub-pins-layer-flat", enterHandler);
   map.on("mouseenter", "selected-pub-pin-layer", enterHandler);
   map.on("mouseenter", "pub-pins-cluster-layer", enterHandler);
   map.on("mouseenter", "user-location-layer", enterHandler);
-  map.on("mouseleave", "pub-pins-layer", leaveHandler);
+  map.on("mouseleave", "pub-pins-layer-clustered", leaveHandler);
+  map.on("mouseleave", "pub-pins-layer-flat", leaveHandler);
   map.on("mouseleave", "selected-pub-pin-layer", leaveHandler);
   map.on("mouseleave", "pub-pins-cluster-layer", leaveHandler);
   map.on("mouseleave", "user-location-layer", leaveHandler);
 }
 
-function ensurePubPinLayers(map: MapLibreMap) {
+function ensurePubPinLayers(map: MapLibreMap, shouldCluster: boolean) {
   if (!map.getSource("pub-pins")) {
     map.addSource("pub-pins", {
       type: "geojson",
@@ -449,6 +453,13 @@ function ensurePubPinLayers(map: MapLibreMap) {
       cluster: true,
       clusterRadius: 38,
       clusterMaxZoom: 11
+    });
+  }
+
+  if (!map.getSource("pub-pins-flat")) {
+    map.addSource("pub-pins-flat", {
+      type: "geojson",
+      data: emptyFeatureCollection()
     });
   }
 
@@ -466,6 +477,7 @@ function ensurePubPinLayers(map: MapLibreMap) {
       }
     });
   }
+  map.setLayoutProperty("pub-pins-cluster-layer", "visibility", shouldCluster ? "visible" : "none");
 
   if (!map.getLayer("pub-pins-cluster-count-layer")) {
     map.addLayer({
@@ -483,10 +495,11 @@ function ensurePubPinLayers(map: MapLibreMap) {
       }
     });
   }
+  map.setLayoutProperty("pub-pins-cluster-count-layer", "visibility", shouldCluster ? "visible" : "none");
 
-  if (!map.getLayer("pub-pins-layer")) {
+  if (!map.getLayer("pub-pins-layer-clustered")) {
     map.addLayer({
-      id: "pub-pins-layer",
+      id: "pub-pins-layer-clustered",
       type: "symbol",
       source: "pub-pins",
       filter: ["all", ["!", ["has", "point_count"]], ["==", ["get", "selected"], 0]],
@@ -498,13 +511,30 @@ function ensurePubPinLayers(map: MapLibreMap) {
       }
     });
   }
+  map.setLayoutProperty("pub-pins-layer-clustered", "visibility", shouldCluster ? "visible" : "none");
+
+  if (!map.getLayer("pub-pins-layer-flat")) {
+    map.addLayer({
+      id: "pub-pins-layer-flat",
+      type: "symbol",
+      source: "pub-pins-flat",
+      filter: ["==", ["get", "selected"], 0],
+      layout: {
+        "icon-image": ["get", "icon"],
+        "icon-anchor": "center",
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true
+      }
+    });
+  }
+  map.setLayoutProperty("pub-pins-layer-flat", "visibility", shouldCluster ? "none" : "visible");
 
   if (!map.getLayer("selected-pub-pin-layer")) {
     map.addLayer({
       id: "selected-pub-pin-layer",
       type: "symbol",
-      source: "pub-pins",
-      filter: ["all", ["!", ["has", "point_count"]], ["==", ["get", "selected"], 1]],
+      source: "pub-pins-flat",
+      filter: ["==", ["get", "selected"], 1],
       layout: {
         "icon-image": ["get", "icon"],
         "icon-anchor": "center",
@@ -542,9 +572,10 @@ function syncPubPinSource(
   map: MapLibreMap,
   data: GeoJSON.FeatureCollection<GeoJSON.Point, { id: string; icon: string; selected: number }>
 ) {
-  const source = map.getSource("pub-pins") as maplibregl.GeoJSONSource | undefined;
-  if (!source) return;
-  source.setData(data);
+  const clusteredSource = map.getSource("pub-pins") as maplibregl.GeoJSONSource | undefined;
+  if (clusteredSource) clusteredSource.setData(data);
+  const flatSource = map.getSource("pub-pins-flat") as maplibregl.GeoJSONSource | undefined;
+  if (flatSource) flatSource.setData(data);
 }
 
 function syncUserLocationSource(
