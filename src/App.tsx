@@ -17,6 +17,7 @@ import { requestUserLocation } from "./lib/location";
 import MaterialIcon from "./components/MaterialIcon";
 
 const IRELAND_CENTER = { lat: 53.425, lon: -7.9441 };
+const IRELAND_BOUNDS = { south: 51.35, north: 55.43, west: -10.85, east: -5.25 };
 const PubMap = lazy(() => import("./components/PubMap"));
 const FORECAST_CACHE_MS = 15 * 60_000;
 const ADDRESS_CACHE_MS = 7 * 24 * 60 * 60_000;
@@ -325,37 +326,51 @@ function getRegionFallbackCenter(regionId: (typeof REGION_OPTIONS)[number]["id"]
   };
 }
 
+function boundsFromPoints(points: LatLon[]) {
+  return points.reduce(
+    (acc, point) => ({
+      south: Math.min(acc.south, point.lat),
+      north: Math.max(acc.north, point.lat),
+      west: Math.min(acc.west, point.lon),
+      east: Math.max(acc.east, point.lon)
+    }),
+    {
+      south: Number.POSITIVE_INFINITY,
+      north: Number.NEGATIVE_INFINITY,
+      west: Number.POSITIVE_INFINITY,
+      east: Number.NEGATIVE_INFINITY
+    }
+  );
+}
+
 function getRegionFocus(regionId: (typeof REGION_OPTIONS)[number]["id"], pubs: Pub[]) {
   if (regionId === "all") {
-    return { center: IRELAND_CENTER, zoom: 6.7 };
+    const allPoints = pubs.map(getPubAnchor);
+    return {
+      bounds: allPoints.length ? boundsFromPoints(allPoints) : IRELAND_BOUNDS,
+      maxZoom: 7.1
+    };
   }
 
   const regionPubs = pubs.filter((pub) => pointInRegion(getPubAnchor(pub), regionId));
   if (!regionPubs.length) {
-    return { center: getRegionFallbackCenter(regionId), zoom: 11.3 };
+    const region = REGION_OPTIONS.find((option) => option.id === regionId);
+    return {
+      bounds:
+        region?.bounds ?? {
+          south: getRegionFallbackCenter(regionId).lat - 0.03,
+          north: getRegionFallbackCenter(regionId).lat + 0.03,
+          west: getRegionFallbackCenter(regionId).lon - 0.04,
+          east: getRegionFallbackCenter(regionId).lon + 0.04
+        },
+      maxZoom: 11.8
+    };
   }
 
-  const clusterRadiusM = 1200;
-  let bestCenter = getPubAnchor(regionPubs[0]!);
-  let bestScore = -1;
-
-  for (const pub of regionPubs) {
-    const anchor = getPubAnchor(pub);
-    const nearby = regionPubs
-      .map((candidate) => getPubAnchor(candidate))
-      .filter((candidate) => haversineDistanceM(anchor, candidate) <= clusterRadiusM);
-
-    if (nearby.length > bestScore) {
-      bestScore = nearby.length;
-      bestCenter = {
-        lat: nearby.reduce((sum, point) => sum + point.lat, 0) / nearby.length,
-        lon: nearby.reduce((sum, point) => sum + point.lon, 0) / nearby.length
-      };
-    }
-  }
-
-  const zoom = regionPubs.length >= 120 ? 13.2 : regionPubs.length >= 45 ? 12.6 : 11.9;
-  return { center: bestCenter, zoom };
+  return {
+    bounds: boundsFromPoints(regionPubs.map(getPubAnchor)),
+    maxZoom: regionPubs.length >= 120 ? 11.8 : regionPubs.length >= 45 ? 12.2 : 12.8
+  };
 }
 
 export default function App() {
@@ -1062,7 +1077,13 @@ export default function App() {
         {sunChasePlan ? (
           <div className="sunChasePlan">
             <div className="sunChaseHeader">
-              <span>Sunny pub route</span>
+              <div className="sunChaseSummary">
+                <span className="sunChaseSummaryLabel">Sun on route</span>
+                <strong>
+                  {formatDublinTime(sunChasePlan.stops[0]!.sunnyStart)} →{" "}
+                  {formatDublinTime(sunChasePlan.stops[sunChasePlan.stops.length - 1]!.interval.end)}
+                </strong>
+              </div>
               {sunChasePlan.googleMapsUrl ? (
                 <a
                   className="sunChaseRouteBtn"
@@ -1080,16 +1101,21 @@ export default function App() {
                 <div className="sunChaseStop" key={`${stop.pub.id}-${stop.interval.start.toISOString()}`}>
                   <div className="sunChaseStopTop">
                     <span className="sunChaseIndex">{index + 1}</span>
-                    <span className="sunChaseName">{stop.pub.name}</span>
+                    <div className="sunChaseStopTitle">
+                      <span className="sunChaseName">{stop.pub.name}</span>
+                      <span className="sunChaseMeta sunChaseStayWindow">
+                        Stay {formatDublinTime(stop.sunnyStart)} → {formatDublinTime(stop.departAt ?? stop.interval.end)}
+                      </span>
+                    </div>
                   </div>
-                  <div className="sunChaseMeta">
-                    <strong>{formatDublinTime(stop.sunnyStart)}</strong> → {formatDublinTime(stop.interval.end)}
-                  </div>
-                  <div className="sunChaseMeta">
-                    {index === 0
-                      ? `${sunChasePlan.originIsUserLocation ? `Leave ${formatDublinTime(stop.departAt ?? effectivePreviewTime)}` : "Start here"} · ${stop.walkMinutesFromPrev} min walk`
-                      : `Leave ${formatDublinTime(sunChasePlan.stops[index - 1]!.departAt ?? effectivePreviewTime)} · ${stop.walkMinutesFromPrev} min walk`}
-                  </div>
+                  {index < sunChasePlan.stops.length - 1 ? (
+                    <div className="sunChaseMeta">
+                      Leave {formatDublinTime(stop.departAt ?? stop.interval.end)} · {sunChasePlan.stops[index + 1]!.walkMinutesFromPrev} min walk to{" "}
+                      {sunChasePlan.stops[index + 1]!.pub.name}
+                    </div>
+                  ) : (
+                    <div className="sunChaseMeta">Final stop · enjoy the sun here until {formatDublinTime(stop.interval.end)}</div>
+                  )}
                 </div>
               ))}
             </div>

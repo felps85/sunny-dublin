@@ -41,7 +41,7 @@ export default function PubMap(props: {
   userLocation?: { lat: number; lon: number } | null;
   userLocationStatus?: "sunny" | "not" | "unknown";
   userRecenterTick?: number;
-  regionFocus?: { center: LatLon; zoom: number } | null;
+  regionFocus?: { bounds: { south: number; north: number; west: number; east: number }; maxZoom?: number } | null;
   regionFocusTick?: number;
   selectedSunBearingDeg?: number;
   selectedFrontBearingDeg?: number;
@@ -167,7 +167,7 @@ export default function PubMap(props: {
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !map.isStyleLoaded()) return;
-    if (selectedPub || props.userLocation || props.pubs.length === 0) return;
+    if (selectedPub || props.pubs.length === 0) return;
     if (props.pubs.length <= lastAutoFitPubCountRef.current) return;
 
     const bounds = new maplibregl.LngLatBounds();
@@ -242,10 +242,14 @@ export default function PubMap(props: {
     if (!map || !props.regionFocus) return;
     if (selectedPub) return;
 
-    map.easeTo({
-      center: [props.regionFocus.center.lon, props.regionFocus.center.lat],
-      zoom: props.regionFocus.zoom,
-      duration: 450
+    const bounds = new maplibregl.LngLatBounds(
+      [props.regionFocus.bounds.west, props.regionFocus.bounds.south],
+      [props.regionFocus.bounds.east, props.regionFocus.bounds.north]
+    );
+    map.fitBounds(bounds, {
+      padding: { top: 92, right: 28, bottom: 88, left: 28 },
+      duration: 450,
+      maxZoom: props.regionFocus.maxZoom ?? 12.2
     });
   }, [props.regionFocus, props.regionFocusTick, selectedPub]);
 
@@ -289,16 +293,16 @@ export default function PubMap(props: {
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !map.isStyleLoaded()) return;
+    if (!props.userLocation || !props.userRecenterTick) return;
     ensureUserLocationImage(map);
     ensureUserLocationLayer(map);
     syncUserLocationSource(map, props.userLocation, props.userLocationStatus);
-    if (!props.userLocation) return;
     map.easeTo({
       center: [props.userLocation.lon, props.userLocation.lat],
       zoom: Math.max(map.getZoom(), 14),
       duration: 500
     });
-  }, [props.userLocation, props.userLocationStatus, props.userRecenterTick]);
+  }, [props.userLocation, props.userRecenterTick]);
 
   return (
     <>
@@ -444,7 +448,7 @@ function ensurePubPinLayers(map: MapLibreMap) {
       data: emptyFeatureCollection(),
       cluster: true,
       clusterRadius: 54,
-      clusterMaxZoom: 10
+      clusterMaxZoom: 13
     });
   }
 
