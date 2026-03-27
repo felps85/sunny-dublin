@@ -117,13 +117,16 @@ def main():
     )
 
     for osm_id, fclass, name, geom in cursor:
+        stripped_name = (name or "").strip()
+        if re.fullmatch(r"\d+[A-Za-z]?", stripped_name):
+            continue
         point = decode_gpkg_point(geom)
         if point is None:
             continue
 
         pub = {
             "id": f"{normalize_name(name)}-geofabrik-{osm_id}",
-            "name": name,
+            "name": stripped_name,
             "lat": round(point["lat"], 7),
             "lon": round(point["lon"], 7),
             "displayLat": round(point["lat"], 7),
@@ -147,10 +150,13 @@ def main():
         lon = curated.get("lon")
         if not isinstance(name, str) or not isinstance(lat, (int, float)) or not isinstance(lon, (int, float)):
             continue
+        stripped_name = name.strip()
+        if re.fullmatch(r"\d+[A-Za-z]?", stripped_name):
+            continue
 
         candidate = {
             "id": curated.get("id") if isinstance(curated.get("id"), str) else f"{normalize_name(name)}-curated",
-            "name": name,
+            "name": stripped_name,
             "lat": float(lat),
             "lon": float(lon),
             "displayLat": float(curated.get("displayLat", lat)),

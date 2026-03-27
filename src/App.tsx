@@ -27,12 +27,19 @@ const WALKING_METERS_PER_MINUTE = 80;
 
 const REGION_OPTIONS = [
   { id: "all", label: "All Ireland", bounds: null },
-  { id: "dublin", label: "Dublin", bounds: { south: 53.24, north: 53.43, west: -6.45, east: -6.05 } },
-  { id: "cork", label: "Cork", bounds: { south: 51.84, north: 51.97, west: -8.58, east: -8.39 } },
-  { id: "galway", label: "Galway", bounds: { south: 53.23, north: 53.32, west: -9.14, east: -8.98 } },
-  { id: "limerick", label: "Limerick", bounds: { south: 52.61, north: 52.72, west: -8.72, east: -8.54 } },
-  { id: "waterford", label: "Waterford", bounds: { south: 52.22, north: 52.29, west: -7.17, east: -7.05 } },
-  { id: "belfast", label: "Belfast", bounds: { south: 54.54, north: 54.66, west: -6.04, east: -5.82 } }
+  { id: "dublin", label: "Dublin", bounds: { south: 53.19, north: 53.46, west: -6.55, east: -6.00 } },
+  { id: "cork", label: "Cork", bounds: { south: 51.80, north: 52.02, west: -8.63, east: -8.32 } },
+  { id: "galway", label: "Galway", bounds: { south: 53.22, north: 53.36, west: -9.22, east: -8.90 } },
+  { id: "limerick", label: "Limerick", bounds: { south: 52.58, north: 52.75, west: -8.78, east: -8.48 } },
+  { id: "waterford", label: "Waterford", bounds: { south: 52.20, north: 52.34, west: -7.20, east: -6.98 } },
+  { id: "belfast", label: "Belfast", bounds: { south: 54.50, north: 54.70, west: -6.15, east: -5.75 } },
+  { id: "derry", label: "Derry", bounds: { south: 54.95, north: 55.05, west: -7.40, east: -7.22 } },
+  { id: "kilkenny", label: "Kilkenny", bounds: { south: 52.61, north: 52.69, west: -7.30, east: -7.18 } },
+  { id: "sligo", label: "Sligo", bounds: { south: 54.24, north: 54.32, west: -8.53, east: -8.41 } },
+  { id: "athlone", label: "Athlone", bounds: { south: 53.39, north: 53.46, west: -7.98, east: -7.88 } },
+  { id: "drogheda", label: "Drogheda", bounds: { south: 53.69, north: 53.75, west: -6.40, east: -6.30 } },
+  { id: "wexford", label: "Wexford", bounds: { south: 52.31, north: 52.37, west: -6.49, east: -6.42 } },
+  { id: "letterkenny", label: "Letterkenny", bounds: { south: 54.92, north: 54.98, west: -7.77, east: -7.69 } }
 ] as const;
 
 type SunChaseStop = {
@@ -511,6 +518,9 @@ export default function App() {
     if (!q) return list;
     return list.filter((pub) => normalizeSearchText(pub.name).includes(q));
   }, [pubsSorted, query, regionId]);
+  const mapPubs = useMemo(() => {
+    return regionId === "all" ? pubsSorted : pubsSorted.filter((pub) => pointInRegion(getPubAnchor(pub), regionId));
+  }, [pubsSorted, regionId]);
   const regionFocus = useMemo(() => getRegionFocus(regionId, pubs), [pubs, regionId]);
 
   const [now, setNow] = useState(() => new Date());
@@ -649,6 +659,29 @@ export default function App() {
       times
     });
     return sunnyIntervalsFromHours(samples);
+  }, [effectivePreviewTime, userForecast, userLocation]);
+
+  const userLocationStatus = useMemo<"sunny" | "not" | "unknown">(() => {
+    if (!userLocation || !userForecast) return "unknown";
+    const hours = computeGeneralSunnyHours({
+      pub: {
+        id: "user-location",
+        name: "Your location",
+        lat: userLocation.lat,
+        lon: userLocation.lon
+      },
+      forecast: userForecast
+    });
+    const nearest = hours.reduce<{ best: (typeof hours)[number] | null; dt: number }>(
+      (acc, hour) => {
+        const dt = Math.abs(hour.time.getTime() - effectivePreviewTime.getTime());
+        if (!acc.best || dt < acc.dt) return { best: hour, dt };
+        return acc;
+      },
+      { best: null, dt: Number.POSITIVE_INFINITY }
+    ).best;
+    if (!nearest) return "unknown";
+    return nearest.isFrontSunny ? "sunny" : "not";
   }, [effectivePreviewTime, userForecast, userLocation]);
 
   const sunChasePlan = useMemo(() => {
@@ -1167,7 +1200,7 @@ export default function App() {
       <main className="mapWrap">
         <Suspense fallback={<div className="mapSkeleton">Loading map...</div>}>
           <PubMap
-            pubs={pubsSorted}
+            pubs={mapPubs}
             selectedPub={selectedPub}
             selectedAnchor={selectedDisplayPoint}
             popoverAnchor={activePopoverAnchor}
@@ -1182,6 +1215,7 @@ export default function App() {
             status={pubStatus}
             selectedPopover={activePopover}
             userLocation={userLocation}
+            userLocationStatus={userLocationStatus}
             userRecenterTick={userRecenterTick}
             regionFocus={regionFocus}
             regionFocusTick={regionFocusTick}

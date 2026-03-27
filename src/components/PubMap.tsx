@@ -39,6 +39,7 @@ export default function PubMap(props: {
   status: Map<string, "sunny" | "not" | "unknown">;
   selectedPopover?: React.ReactNode;
   userLocation?: { lat: number; lon: number } | null;
+  userLocationStatus?: "sunny" | "not" | "unknown";
   userRecenterTick?: number;
   regionFocus?: { center: LatLon; zoom: number } | null;
   regionFocusTick?: number;
@@ -141,7 +142,7 @@ export default function PubMap(props: {
       ensurePubPinLayers(map);
       ensureUserLocationLayer(map);
       syncPubPinSource(map, buildFeatureCollection(pubPinFeatures));
-      syncUserLocationSource(map, props.userLocation);
+      syncUserLocationSource(map, props.userLocation, props.userLocationStatus);
       registerPubPinInteractions(map, latestPropsRef);
       publishViewport();
     });
@@ -160,8 +161,8 @@ export default function PubMap(props: {
     ensurePubPinLayers(map);
     ensureUserLocationLayer(map);
     syncPubPinSource(map, buildFeatureCollection(pubPinFeatures));
-    syncUserLocationSource(map, props.userLocation);
-  }, [props.userLocation, pubPinFeatures]);
+    syncUserLocationSource(map, props.userLocation, props.userLocationStatus);
+  }, [props.userLocation, props.userLocationStatus, pubPinFeatures]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -290,14 +291,14 @@ export default function PubMap(props: {
     if (!map || !map.isStyleLoaded()) return;
     ensureUserLocationImage(map);
     ensureUserLocationLayer(map);
-    syncUserLocationSource(map, props.userLocation);
+    syncUserLocationSource(map, props.userLocation, props.userLocationStatus);
     if (!props.userLocation) return;
     map.easeTo({
       center: [props.userLocation.lon, props.userLocation.lat],
       zoom: Math.max(map.getZoom(), 14),
       duration: 500
     });
-  }, [props.userLocation, props.userRecenterTick]);
+  }, [props.userLocation, props.userLocationStatus, props.userRecenterTick]);
 
   return (
     <>
@@ -524,7 +525,7 @@ function ensureUserLocationLayer(map: MapLibreMap) {
       type: "symbol",
       source: "user-location",
       layout: {
-        "icon-image": "user-location-pin-v3",
+        "icon-image": ["get", "icon"],
         "icon-anchor": "bottom",
         "icon-allow-overlap": true,
         "icon-ignore-placement": true
@@ -542,7 +543,11 @@ function syncPubPinSource(
   source.setData(data);
 }
 
-function syncUserLocationSource(map: MapLibreMap, userLocation?: { lat: number; lon: number } | null) {
+function syncUserLocationSource(
+  map: MapLibreMap,
+  userLocation?: { lat: number; lon: number } | null,
+  status: "sunny" | "not" | "unknown" = "unknown"
+) {
   const source = map.getSource("user-location") as maplibregl.GeoJSONSource | undefined;
   if (!source) return;
   source.setData(
@@ -552,7 +557,7 @@ function syncUserLocationSource(map: MapLibreMap, userLocation?: { lat: number; 
           features: [
             {
               type: "Feature",
-              properties: {},
+              properties: { icon: getUserLocationIconName(status) },
               geometry: {
                 type: "Point",
                 coordinates: [userLocation.lon, userLocation.lat]
@@ -582,12 +587,20 @@ function ensurePubPinImages(map: MapLibreMap) {
 }
 
 function ensureUserLocationImage(map: MapLibreMap) {
-  if (map.hasImage("user-location-pin-v3")) return;
-  map.addImage("user-location-pin-v3", createUserLocationPinImage(), { pixelRatio: 2 });
+  const statuses: Array<"sunny" | "not" | "unknown"> = ["sunny", "not", "unknown"];
+  for (const status of statuses) {
+    const name = getUserLocationIconName(status);
+    if (map.hasImage(name)) continue;
+    map.addImage(name, createUserLocationPinImage(status), { pixelRatio: 2 });
+  }
 }
 
 function getPubPinIconName(status: "sunny" | "not" | "unknown", selected: boolean) {
   return `pub-pin-v13-${selected ? "selected-" : ""}${status}`;
+}
+
+function getUserLocationIconName(status: "sunny" | "not" | "unknown") {
+  return `user-location-pin-v4-${status}`;
 }
 
 function createPinImage(params: { status: "sunny" | "not" | "unknown"; selected: boolean }) {
@@ -609,7 +622,7 @@ function createPinImage(params: { status: "sunny" | "not" | "unknown"; selected:
   return ctx.getImageData(0, 0, width, height);
 }
 
-function createUserLocationPinImage() {
+function createUserLocationPinImage(status: "sunny" | "not" | "unknown") {
   const size = 56;
   const paddingX = 8;
   const paddingTop = 8;
@@ -624,7 +637,8 @@ function createUserLocationPinImage() {
 
   const centerX = width / 2;
   const centerY = paddingTop + size / 2;
-  drawLocationOnGlyph(ctx, "#d93025", centerX, centerY, size);
+  const color = status === "sunny" ? "#e7a31a" : status === "not" ? "#74808f" : "#9aa5b1";
+  drawLocationOnGlyph(ctx, color, centerX, centerY, size);
 
   return ctx.getImageData(0, 0, width, height);
 }
