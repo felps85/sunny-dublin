@@ -19,6 +19,12 @@ import MaterialIcon from "./components/MaterialIcon";
 const IRELAND_CENTER = { lat: 53.425, lon: -7.9441 };
 const IRELAND_BOUNDS = { south: 51.35, north: 55.43, west: -10.85, east: -5.25 };
 const APP_BASE_PATH = import.meta.env.BASE_URL || "/";
+const FAVICON_BY_STATUS = {
+  default: "favicon-default.svg",
+  sunny: "favicon-sunny.svg",
+  not: "favicon-not.svg",
+  unknown: "favicon-unknown.svg"
+} as const;
 const PubMap = lazy(() => import("./components/PubMap"));
 const FORECAST_CACHE_MS = 15 * 60_000;
 const ADDRESS_CACHE_MS = 7 * 24 * 60 * 60_000;
@@ -362,6 +368,21 @@ function countVisibleRegions(viewport: MapViewport | null) {
   return REGION_OPTIONS.filter((option) => option.id !== "all" && option.bounds && boundsIntersect(option.bounds, viewportBounds)).length;
 }
 
+function applyAppFavicon(kind: keyof typeof FAVICON_BY_STATUS) {
+  const href = `${APP_BASE_PATH}${FAVICON_BY_STATUS[kind]}`;
+  const existing = document.getElementById("app-favicon");
+  const link =
+    existing instanceof HTMLLinkElement
+      ? existing
+      : Object.assign(document.createElement("link"), {
+          id: "app-favicon",
+          rel: "icon",
+          type: "image/svg+xml"
+        });
+  link.href = href;
+  if (!existing) document.head.appendChild(link);
+}
+
 function getRegionFocus(regionId: (typeof REGION_OPTIONS)[number]["id"], pubs: Pub[]) {
   if (regionId === "all") {
     const allPoints = pubs.map(getPubAnchor);
@@ -428,7 +449,7 @@ export default function App() {
   useEffect(() => {
     let cancelled = false;
     const loadPubs = async () => {
-      const candidates = ["pubs-ireland-lite.json", "pubs-ireland.json", "pubs.json"].map((path) => `${APP_BASE_PATH}${path}`);
+      const candidates = ["pubs-ireland.json", "pubs-ireland-lite.json", "pubs.json"].map((path) => `${APP_BASE_PATH}${path}`);
       let json: unknown = null;
 
       for (const candidate of candidates) {
@@ -730,6 +751,14 @@ export default function App() {
     if (!nearest) return "unknown";
     return nearest.isFrontSunny ? "sunny" : "not";
   }, [effectivePreviewTime, userForecast, userLocation]);
+
+  useEffect(() => {
+    if (!userLocation) {
+      applyAppFavicon("default");
+      return;
+    }
+    applyAppFavicon(userLocationStatus);
+  }, [userLocation, userLocationStatus]);
 
   const sunChasePlan = useMemo(() => {
     if (!showSunChase || !selectedPub || !selectedDisplayPoint || (!forecast && !viewportForecastGrid?.length)) return null;

@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "import:pubs": "node scripts/import-overpass-pubs.mjs",
-    "build:ireland-pubs": "python3 scripts/build-ireland-pubs.py"
+    "build:ireland-pubs": "python3 scripts/build-ireland-pubs.py",
+    "clean:ireland-pubs": "node scripts/clean-ireland-pubs.mjs"
   },
   "dependencies": {
     "maplibre-gl": "^5.0.0",
