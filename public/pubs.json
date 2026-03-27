@@ -1,0 +1,4296 @@
+[
+  {
+    "id": "22-bar-restaurant-node-10675853050",
+    "name": "22 Bar & Restaurant",
+    "lat": 53.3661312,
+    "lon": -6.3895956,
+    "displayLat": 53.3661312,
+    "displayLon": -6.3895956,
+    "frontBearingDeg": 24,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "53-south-william-node-5729185009",
+    "name": "53 South William",
+    "lat": 53.34174,
+    "lon": -6.2626634,
+    "displayLat": 53.34174,
+    "displayLon": -6.2626634,
+    "frontBearingDeg": 291.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "74-talbot-node-562072082",
+    "name": "74 Talbot",
+    "lat": 53.350879,
+    "lon": -6.2529113,
+    "displayLat": 53.350879,
+    "displayLon": -6.2529113,
+    "frontBearingDeg": 250.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "alfred-s-node-5787220032",
+    "name": "Alfred's",
+    "lat": 53.342004,
+    "lon": -6.2866892,
+    "displayLat": 53.342004,
+    "displayLon": -6.2866892,
+    "frontBearingDeg": 0.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "all-my-friends-node-1373977813",
+    "name": "All My Friends",
+    "lat": 53.3406636,
+    "lon": -6.27815,
+    "displayLat": 53.3406636,
+    "displayLon": -6.27815,
+    "frontBearingDeg": 253.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "an-cappagh-nua-node-1615384981",
+    "name": "An Cappagh Nua",
+    "lat": 53.395102,
+    "lon": -6.3111759,
+    "displayLat": 53.395102,
+    "displayLon": -6.3111759,
+    "frontBearingDeg": 111.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "an-cosa-n-node-4511368747",
+    "name": "An Cosán",
+    "lat": 53.2788418,
+    "lon": -6.4010508,
+    "displayLat": 53.2788418,
+    "displayLon": -6.4010508,
+    "frontBearingDeg": 17.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "angler-s-rest-node-4952552579",
+    "name": "Angler’s Rest",
+    "lat": 53.3591428,
+    "lon": -6.3587854,
+    "displayLat": 53.3591428,
+    "displayLon": -6.3587854,
+    "frontBearingDeg": 224.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "anseo-node-446783419",
+    "name": "Anseo",
+    "lat": 53.3353226,
+    "lon": -6.264995,
+    "displayLat": 53.3353226,
+    "displayLon": -6.264995,
+    "frontBearingDeg": 271.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "ardlea-inn-node-1529996763",
+    "name": "Ardlea Inn",
+    "lat": 53.3866526,
+    "lon": -6.2115954,
+    "displayLat": 53.3866526,
+    "displayLon": -6.2115954,
+    "frontBearingDeg": 110.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "arlington-bar-restaurant-node-279915988",
+    "name": "Arlington Bar & Restaurant",
+    "lat": 53.3472522,
+    "lon": -6.2609325,
+    "displayLat": 53.3472522,
+    "displayLon": -6.2609325,
+    "frontBearingDeg": 159.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "arthur-guinness-bar-node-13246132939",
+    "name": "Arthur Guinness Bar",
+    "lat": 53.4280097,
+    "lon": -6.2455995,
+    "displayLat": 53.4280097,
+    "displayLon": -6.2455995,
+    "frontBearingDeg": 275,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "arthur-mayne-s-node-3028480445",
+    "name": "Arthur Mayne’s",
+    "lat": 53.3216783,
+    "lon": -6.2352699,
+    "displayLat": 53.3216783,
+    "displayLon": -6.2352699,
+    "frontBearingDeg": 229.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "arthurs-curated",
+    "name": "Arthur’s",
+    "lat": 53.3431265,
+    "lon": -6.2817019,
+    "displayLat": 53.3431265,
+    "displayLon": -6.2817019
+  },
+  {
+    "id": "autobahn-roadhouse-node-1484733482",
+    "name": "Autobahn Roadhouse",
+    "lat": 53.3897043,
+    "lon": -6.2712214,
+    "displayLat": 53.3897043,
+    "displayLon": -6.2712214,
+    "frontBearingDeg": 6.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bad-bob-s-node-1423559556",
+    "name": "Bad Bob's",
+    "lat": 53.3450328,
+    "lon": -6.2659898,
+    "displayLat": 53.3450328,
+    "displayLon": -6.2659898,
+    "frontBearingDeg": 345.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "ball-alley-house-node-506824954",
+    "name": "Ball Alley House",
+    "lat": 53.3554596,
+    "lon": -6.4546703,
+    "displayLat": 53.3554596,
+    "displayLon": -6.4546703,
+    "frontBearingDeg": 341,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "ballinteer-house-node-132186038",
+    "name": "Ballinteer House",
+    "lat": 53.2747643,
+    "lon": -6.2545959,
+    "displayLat": 53.2747643,
+    "displayLon": -6.2545959,
+    "frontBearingDeg": 158.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bar-1661-node-635273448",
+    "name": "Bar 1661",
+    "lat": 53.3492625,
+    "lon": -6.2704646,
+    "displayLat": 53.3492625,
+    "displayLon": -6.2704646,
+    "frontBearingDeg": 269.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bar-tolka-node-280123269",
+    "name": "Bar@Tolka",
+    "lat": 53.3676758,
+    "lon": -6.2512678,
+    "displayLat": 53.3676758,
+    "displayLon": -6.2512678,
+    "frontBearingDeg": 41.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "barcode-node-1509769787",
+    "name": "Barcode",
+    "lat": 53.3629792,
+    "lon": -6.2287076,
+    "displayLat": 53.3629792,
+    "displayLon": -6.2287076,
+    "frontBearingDeg": 68.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bartley-s-bar-node-768231200",
+    "name": "Bartley’s Bar",
+    "lat": 53.3410955,
+    "lon": -6.2641191,
+    "displayLat": 53.3410955,
+    "displayLon": -6.2641191,
+    "frontBearingDeg": 294.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "belvedere-bar-node-5590669322",
+    "name": "Belvedere Bar",
+    "lat": 53.3550126,
+    "lon": -6.262401,
+    "displayLat": 53.3550126,
+    "displayLon": -6.262401,
+    "frontBearingDeg": 320.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "birchall-s-node-612623532",
+    "name": "Birchall’s",
+    "lat": 53.328038,
+    "lon": -6.304945,
+    "displayLat": 53.328038,
+    "displayLon": -6.304945,
+    "frontBearingDeg": 339.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "birchall-s-node-565770327",
+    "name": "Birchall’s",
+    "lat": 53.3233904,
+    "lon": -6.2503391,
+    "displayLat": 53.3233904,
+    "displayLon": -6.2503391,
+    "frontBearingDeg": 36.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bison-bar-node-2175861132",
+    "name": "Bison Bar",
+    "lat": 53.3454018,
+    "lon": -6.2663687,
+    "displayLat": 53.3454018,
+    "displayLon": -6.2663687,
+    "frontBearingDeg": 346.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "blackbanks-bar-grill-node-2080832424",
+    "name": "Blackbanks Bar & Grill",
+    "lat": 53.3859746,
+    "lon": -6.1555082,
+    "displayLat": 53.3859746,
+    "displayLon": -6.1555082,
+    "frontBearingDeg": 40.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "blackbird-curated",
+    "name": "Blackbird",
+    "lat": 53.3268571,
+    "lon": -6.264612,
+    "displayLat": 53.3268571,
+    "displayLon": -6.264612
+  },
+  {
+    "id": "board-node-943350476",
+    "name": "Board",
+    "lat": 53.3304221,
+    "lon": -6.275613,
+    "displayLat": 53.3304221,
+    "displayLon": -6.275613,
+    "frontBearingDeg": 160.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bob-s-node-5673840263",
+    "name": "Bob’s",
+    "lat": 53.3563012,
+    "lon": -6.4500685,
+    "displayLat": 53.3563012,
+    "displayLon": -6.4500685,
+    "frontBearingDeg": 80.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bolands-node-11975728522",
+    "name": "Bolands",
+    "lat": 53.2887722,
+    "lon": -6.198286,
+    "displayLat": 53.2887722,
+    "displayLon": -6.198286,
+    "frontBearingDeg": 335.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bonobo-node-768520263",
+    "name": "Bonobo",
+    "lat": 53.3503544,
+    "lon": -6.2746953,
+    "displayLat": 53.3503544,
+    "displayLon": -6.2746953,
+    "frontBearingDeg": 108.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "boomers-node-1320207694",
+    "name": "Boomers",
+    "lat": 53.3235135,
+    "lon": -6.3792415,
+    "displayLat": 53.3235135,
+    "displayLon": -6.3792415,
+    "frontBearingDeg": 50.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "boot-inn-node-122079566",
+    "name": "Boot Inn",
+    "lat": 53.4318903,
+    "lon": -6.2642817,
+    "displayLat": 53.4318903,
+    "displayLon": -6.2642817,
+    "frontBearingDeg": 267.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "brady-s-node-299225092",
+    "name": "Brady’s",
+    "lat": 53.3098046,
+    "lon": -6.2841368,
+    "displayLat": 53.3098046,
+    "displayLon": -6.2841368,
+    "frontBearingDeg": 155.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "brady-s-node-1357036510",
+    "name": "Brady’s",
+    "lat": 53.4190917,
+    "lon": -6.4750779,
+    "displayLat": 53.4190917,
+    "displayLon": -6.4750779,
+    "frontBearingDeg": 53,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "brass-node-5171529312",
+    "name": "Brass",
+    "lat": 53.2952467,
+    "lon": -6.2029446,
+    "displayLat": 53.2952467,
+    "displayLon": -6.2029446,
+    "frontBearingDeg": 343.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "brewery-bar-node-1521409481",
+    "name": "Brewery Bar",
+    "lat": 53.3404859,
+    "lon": -6.2868779,
+    "displayLat": 53.3404859,
+    "displayLon": -6.2868779,
+    "frontBearingDeg": 176.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "brickyard-node-4266126756",
+    "name": "Brickyard",
+    "lat": 53.2863405,
+    "lon": -6.23705,
+    "displayLat": 53.2863405,
+    "displayLon": -6.23705,
+    "frontBearingDeg": 43.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bruxelles-curated",
+    "name": "Bruxelles",
+    "lat": 53.3413724,
+    "lon": -6.2608444,
+    "displayLat": 53.3413724,
+    "displayLon": -6.2608444
+  },
+  {
+    "id": "bugler-s-pub-node-286817205",
+    "name": "Bugler's Pub",
+    "lat": 53.2840791,
+    "lon": -6.2954161,
+    "displayLat": 53.2840791,
+    "displayLon": -6.2954161,
+    "frontBearingDeg": 290.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "busker-s-bar-node-2419698552",
+    "name": "Busker's Bar",
+    "lat": 53.345838,
+    "lon": -6.2604831,
+    "displayLat": 53.345838,
+    "displayLon": -6.2604831,
+    "frontBearingDeg": 265.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "c-central-node-778690166",
+    "name": "C Central",
+    "lat": 53.3331138,
+    "lon": -6.2647717,
+    "displayLat": 53.3331138,
+    "displayLon": -6.2647717,
+    "frontBearingDeg": 262.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cafe-bar-h-node-1223267149",
+    "name": "Cafe Bar H",
+    "lat": 53.3433861,
+    "lon": -6.2388784,
+    "displayLat": 53.3433861,
+    "displayLon": -6.2388784,
+    "frontBearingDeg": 59.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cafe-en-seine-node-10601110758",
+    "name": "Café en Seine",
+    "lat": 53.3407232,
+    "lon": -6.2585998,
+    "displayLat": 53.3407232,
+    "displayLon": -6.2585998,
+    "frontBearingDeg": 99.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "camden-bites-brews-node-2980368136",
+    "name": "Camden Bites & Brews",
+    "lat": 53.3359048,
+    "lon": -6.2650316,
+    "displayLat": 53.3359048,
+    "displayLon": -6.2650316,
+    "frontBearingDeg": 255.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "camden-exchange-node-3567190069",
+    "name": "Camden Exchange",
+    "lat": 53.3351088,
+    "lon": -6.2654328,
+    "displayLat": 53.3351088,
+    "displayLon": -6.2654328,
+    "frontBearingDeg": 93.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "caribou-node-768231205",
+    "name": "Caribou",
+    "lat": 53.3412009,
+    "lon": -6.2642908,
+    "displayLat": 53.3412009,
+    "displayLon": -6.2642908,
+    "frontBearingDeg": 25.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cassidys-curated",
+    "name": "Cassidy's",
+    "lat": 53.35222,
+    "lon": -6.26085,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "cellar-bar-node-2127757454",
+    "name": "Cellar Bar",
+    "lat": 53.3387556,
+    "lon": -6.2526088,
+    "displayLat": 53.3387556,
+    "displayLon": -6.2526088,
+    "frontBearingDeg": 27.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "centurion-bar-node-10792357138",
+    "name": "Centurion Bar",
+    "lat": 53.3274636,
+    "lon": -6.2296624,
+    "displayLat": 53.3274636,
+    "displayLon": -6.2296624,
+    "frontBearingDeg": 291.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "charlemont-bar-bistro-node-4357798892",
+    "name": "Charlemont Bar & Bistro",
+    "lat": 53.3309476,
+    "lon": -6.259287,
+    "displayLat": 53.3309476,
+    "displayLon": -6.259287,
+    "frontBearingDeg": 166.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "chasers-node-8521097200",
+    "name": "Chasers",
+    "lat": 53.3424752,
+    "lon": -6.3535971,
+    "displayLat": 53.3424752,
+    "displayLon": -6.3535971,
+    "frontBearingDeg": 187.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "chelsea-drugstore-node-2997549697",
+    "name": "Chelsea Drugstore",
+    "lat": 53.3422541,
+    "lon": -6.2644346,
+    "displayLat": 53.3422541,
+    "displayLon": -6.2644346,
+    "frontBearingDeg": 286.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cherry-tree-pub-and-restaurant-node-4913827407",
+    "name": "Cherry Tree Pub and Restaurant",
+    "lat": 53.3164631,
+    "lon": -6.3327284,
+    "displayLat": 53.3164631,
+    "displayLon": -6.3327284,
+    "frontBearingDeg": 51.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "churchtown-stores-node-5142751224",
+    "name": "Churchtown Stores",
+    "lat": 53.2957712,
+    "lon": -6.2603223,
+    "displayLat": 53.2957712,
+    "displayLon": -6.2603223,
+    "frontBearingDeg": 132.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cleary-s-node-2893532903",
+    "name": "Cleary's",
+    "lat": 53.3416481,
+    "lon": -6.3213608,
+    "displayLat": 53.3416481,
+    "displayLon": -6.3213608,
+    "frontBearingDeg": 260.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "clonliffe-harriers-club-bar-node-976835207",
+    "name": "Clonliffe Harriers Club Bar",
+    "lat": 53.4014689,
+    "lon": -6.2435438,
+    "displayLat": 53.4014689,
+    "displayLon": -6.2435438,
+    "frontBearingDeg": 135.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cois-life-bar-node-10576430555",
+    "name": "Cois Life Bar",
+    "lat": 53.3483928,
+    "lon": -6.2556319,
+    "displayLat": 53.3483928,
+    "displayLon": -6.2556319,
+    "frontBearingDeg": 164.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "coman-s-node-415803254",
+    "name": "Coman's",
+    "lat": 53.312007,
+    "lon": -6.2748056,
+    "displayLat": 53.312007,
+    "displayLon": -6.2748056,
+    "frontBearingDeg": 64.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "conway-s-node-2435852904",
+    "name": "Conway’s",
+    "lat": 53.3017544,
+    "lon": -6.1781923,
+    "displayLat": 53.3017544,
+    "displayLon": -6.1781923,
+    "frontBearingDeg": 138.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cooper-s-corner-node-12691947431",
+    "name": "Cooper’s Corner",
+    "lat": 53.342514,
+    "lon": -6.2966716,
+    "displayLat": 53.342514,
+    "displayLon": -6.2966716,
+    "frontBearingDeg": 5.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "corrigan-s-node-564399648",
+    "name": "Corrigan’s",
+    "lat": 53.3275519,
+    "lon": -6.2616703,
+    "displayLat": 53.3275519,
+    "displayLon": -6.2616703,
+    "frontBearingDeg": 77.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "crough-s-pub-node-6313378889",
+    "name": "Crough's Pub",
+    "lat": 53.2867241,
+    "lon": -6.3898849,
+    "displayLat": 53.2867241,
+    "displayLon": -6.3898849,
+    "frontBearingDeg": 81.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "crowbar-node-6659454386",
+    "name": "Crowbar",
+    "lat": 53.3450768,
+    "lon": -6.2643305,
+    "displayLat": 53.3450768,
+    "displayLon": -6.2643305,
+    "frontBearingDeg": 88.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "crowe-s-node-312577264",
+    "name": "Crowe’s",
+    "lat": 53.3291081,
+    "lon": -6.2305605,
+    "displayLat": 53.3291081,
+    "displayLon": -6.2305605,
+    "frontBearingDeg": 215.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "crystal-bar-node-504986812",
+    "name": "Crystal Bar",
+    "lat": 53.2766878,
+    "lon": -6.2205303,
+    "displayLat": 53.2766878,
+    "displayLon": -6.2205303,
+    "frontBearingDeg": 62.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cu-chulainn-s-node-6344025089",
+    "name": "Cú Chulainn's",
+    "lat": 53.3959848,
+    "lon": -6.4400019,
+    "displayLat": 53.3959848,
+    "displayLon": -6.4400019,
+    "frontBearingDeg": 90.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cu-chulainn-s-at-croke-park-node-3158435067",
+    "name": "Cú Chulainn's at Croke Park",
+    "lat": 53.3563652,
+    "lon": -6.2507754,
+    "displayLat": 53.3563652,
+    "displayLon": -6.2507754,
+    "frontBearingDeg": 255,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cumiskey-s-node-2131267850",
+    "name": "Cumiskey’s",
+    "lat": 53.3543418,
+    "lon": -6.2720059,
+    "displayLat": 53.3543418,
+    "displayLon": -6.2720059,
+    "frontBearingDeg": 312.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "d-two-node-775415430",
+    "name": "D-Two",
+    "lat": 53.3344059,
+    "lon": -6.2629302,
+    "displayLat": 53.3344059,
+    "displayLon": -6.2629302,
+    "frontBearingDeg": 256.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "d-arcy-mcgee-s-node-4804586774",
+    "name": "D’Arcy McGee’s",
+    "lat": 53.2934407,
+    "lon": -6.3236249,
+    "displayLat": 53.2934407,
+    "displayLon": -6.3236249,
+    "frontBearingDeg": 68.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "dame-tavern-node-1300613610",
+    "name": "Dame Tavern",
+    "lat": 53.3438207,
+    "lon": -6.263915,
+    "displayLat": 53.3438207,
+    "displayLon": -6.263915,
+    "frontBearingDeg": 358.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "darkey-kelly-s-node-2349855098",
+    "name": "Darkey Kelly’s",
+    "lat": 53.3439563,
+    "lon": -6.2699696,
+    "displayLat": 53.3439563,
+    "displayLon": -6.2699696,
+    "frontBearingDeg": 295.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "dawson-lounge-curated",
+    "name": "Dawson Lounge",
+    "lat": 53.33937,
+    "lon": -6.25974,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "decies-county-node-5838769296",
+    "name": "Decies County",
+    "lat": 53.3410001,
+    "lon": -6.3354067,
+    "displayLat": 53.3410001,
+    "displayLon": -6.3354067,
+    "frontBearingDeg": 341.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "delahunty-s-node-2372309923",
+    "name": "Delahunty's",
+    "lat": 53.3556298,
+    "lon": -6.2658025,
+    "displayLat": 53.3556298,
+    "displayLon": -6.2658025,
+    "frontBearingDeg": 201.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "delaneys-curated",
+    "name": "Delaney's",
+    "lat": 53.34644,
+    "lon": -6.26195,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "delaney-s-node-632666705",
+    "name": "Delaney’s",
+    "lat": 53.3498059,
+    "lon": -6.2784995,
+    "displayLat": 53.3498059,
+    "displayLon": -6.2784995,
+    "frontBearingDeg": 188.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "den-bar-node-4329853451",
+    "name": "Den Bar",
+    "lat": 53.3322511,
+    "lon": -6.2412802,
+    "displayLat": 53.3322511,
+    "displayLon": -6.2412802,
+    "frontBearingDeg": 14.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "devitts-curated",
+    "name": "Devitt's",
+    "lat": 53.3355526,
+    "lon": -6.2655319,
+    "displayLat": 53.3355526,
+    "displayLon": -6.2655319
+  },
+  {
+    "id": "dicey-s-garden-node-4337347089",
+    "name": "Dicey’s Garden",
+    "lat": 53.3359091,
+    "lon": -6.2635598,
+    "displayLat": 53.3359091,
+    "displayLon": -6.2635598,
+    "frontBearingDeg": 89.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "disndat-node-11522240569",
+    "name": "Disndat",
+    "lat": 53.3436679,
+    "lon": -6.2636608,
+    "displayLat": 53.3436679,
+    "displayLon": -6.2636608,
+    "frontBearingDeg": 267.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "dockers-node-9264108045",
+    "name": "Dockers",
+    "lat": 53.3464282,
+    "lon": -6.2456211,
+    "displayLat": 53.3464282,
+    "displayLon": -6.2456211,
+    "frontBearingDeg": 7.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "doheny-and-nesbitt-curated",
+    "name": "Doheny and Nesbitt",
+    "lat": 53.338089,
+    "lon": -6.2528851,
+    "displayLat": 53.338089,
+    "displayLon": -6.2528851
+  },
+  {
+    "id": "downey-s-node-2697063080",
+    "name": "Downey's",
+    "lat": 53.3423356,
+    "lon": -6.3571492,
+    "displayLat": 53.3423356,
+    "displayLon": -6.3571492,
+    "frontBearingDeg": 278.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "drunken-fish-node-5044580221",
+    "name": "Drunken Fish",
+    "lat": 53.3491745,
+    "lon": -6.244184,
+    "displayLat": 53.3491745,
+    "displayLon": -6.244184,
+    "frontBearingDeg": 4.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "drury-buildings-bar-node-12087084525",
+    "name": "Drury Buildings Bar",
+    "lat": 53.3419319,
+    "lon": -6.2634461,
+    "displayLat": 53.3419319,
+    "displayLon": -6.2634461,
+    "frontBearingDeg": 290.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "dudleys-curated",
+    "name": "Dudley’s",
+    "lat": 53.3426549,
+    "lon": -6.2789448,
+    "displayLat": 53.3426549,
+    "displayLon": -6.2789448
+  },
+  {
+    "id": "duffy-s-node-550381063",
+    "name": "Duffy’s",
+    "lat": 53.4507081,
+    "lon": -6.1543875,
+    "displayLat": 53.4507081,
+    "displayLon": -6.1543875,
+    "frontBearingDeg": 345.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "dungeon-bar-node-12596062894",
+    "name": "Dungeon Bar",
+    "lat": 53.2692813,
+    "lon": -6.112998,
+    "displayLat": 53.2692813,
+    "displayLon": -6.112998,
+    "frontBearingDeg": 291.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "dusk-nightclub-node-1526077721",
+    "name": "Dusk Nightclub",
+    "lat": 53.3964581,
+    "lon": -6.2149245,
+    "displayLat": 53.3964581,
+    "displayLon": -6.2149245,
+    "frontBearingDeg": 157.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "dv8-bar-venue-node-768231918",
+    "name": "DV8 Bar & Venue",
+    "lat": 53.3434972,
+    "lon": -6.2905632,
+    "displayLat": 53.3434972,
+    "displayLon": -6.2905632,
+    "frontBearingDeg": 86.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "eccles-townhouse-node-2573726983",
+    "name": "Eccles Townhouse",
+    "lat": 53.3574023,
+    "lon": -6.2641644,
+    "displayLat": 53.3574023,
+    "displayLon": -6.2641644,
+    "frontBearingDeg": 121.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "edenmore-house-node-1432780730",
+    "name": "Edenmore House",
+    "lat": 53.3882621,
+    "lon": -6.1834132,
+    "displayLat": 53.3882621,
+    "displayLon": -6.1834132,
+    "frontBearingDeg": 304.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "egans-node-1146292447",
+    "name": "Egans",
+    "lat": 53.3402594,
+    "lon": -6.2655755,
+    "displayLat": 53.3402594,
+    "displayLon": -6.2655755,
+    "frontBearingDeg": 278.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "ely-bar-brasserie-node-759295279",
+    "name": "ely bar & brasserie",
+    "lat": 53.3492828,
+    "lon": -6.2480239,
+    "displayLat": 53.3492828,
+    "displayLon": -6.2480239,
+    "frontBearingDeg": 275.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "epicenter-node-1521570233",
+    "name": "EpiCenter",
+    "lat": 53.3572808,
+    "lon": -6.2269266,
+    "displayLat": 53.3572808,
+    "displayLon": -6.2269266,
+    "frontBearingDeg": 285.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "fallon-s-node-280958210",
+    "name": "Fallon’s",
+    "lat": 53.3389839,
+    "lon": -6.2733761,
+    "displayLat": 53.3389839,
+    "displayLon": -6.2733761,
+    "frontBearingDeg": 105.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "farrier-draper-bar-restaurant-node-6666742585",
+    "name": "Farrier & Draper Bar & Restaurant",
+    "lat": 53.3424295,
+    "lon": -6.2621681,
+    "displayLat": 53.3424295,
+    "displayLon": -6.2621681,
+    "frontBearingDeg": 293.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "fibber-magee-s-node-5301569915",
+    "name": "Fibber Magee’s",
+    "lat": 53.3528545,
+    "lon": -6.2605121,
+    "displayLat": 53.3528545,
+    "displayLon": -6.2605121,
+    "frontBearingDeg": 323.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "fidelity-node-446785628",
+    "name": "Fidelity",
+    "lat": 53.3471016,
+    "lon": -6.2802916,
+    "displayLat": 53.3471016,
+    "displayLon": -6.2802916,
+    "frontBearingDeg": 99.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "fitzsimon-s-node-1431043154",
+    "name": "Fitzsimon's",
+    "lat": 53.3454708,
+    "lon": -6.2651166,
+    "displayLat": 53.3454708,
+    "displayLon": -6.2651166,
+    "frontBearingDeg": 166.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "forrest-little-golf-club-bar-node-11027856209",
+    "name": "Forrest Little Golf Club Bar",
+    "lat": 53.4394296,
+    "lon": -6.2496872,
+    "displayLat": 53.4394296,
+    "displayLon": -6.2496872,
+    "frontBearingDeg": 311.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "fowler-s-node-550381051",
+    "name": "Fowler’s",
+    "lat": 53.4513054,
+    "lon": -6.1539054,
+    "displayLat": 53.4513054,
+    "displayLon": -6.1539054,
+    "frontBearingDeg": 353.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "frank-ryan-s-node-446785642",
+    "name": "Frank Ryan’s",
+    "lat": 53.3470056,
+    "lon": -6.2800493,
+    "displayLat": 53.3470056,
+    "displayLon": -6.2800493,
+    "frontBearingDeg": 278,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "frehill-s-tavern-node-988809177",
+    "name": "Frehill's Tavern",
+    "lat": 53.3195923,
+    "lon": -6.3131127,
+    "displayLat": 53.3195923,
+    "displayLon": -6.3131127,
+    "frontBearingDeg": 169,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "furry-bog-node-1320104241",
+    "name": "Furry Bog",
+    "lat": 53.2781494,
+    "lon": -6.2882697,
+    "displayLat": 53.2781494,
+    "displayLon": -6.2882697,
+    "frontBearingDeg": 187.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "gibney-s-node-550381074",
+    "name": "Gibney’s",
+    "lat": 53.4513197,
+    "lon": -6.1536649,
+    "displayLat": 53.4513197,
+    "displayLon": -6.1536649,
+    "frontBearingDeg": 261.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "gilbert-wright-node-1981729348",
+    "name": "Gilbert & Wright",
+    "lat": 53.4516886,
+    "lon": -6.1536591,
+    "displayLat": 53.4516886,
+    "displayLon": -6.1536591,
+    "frontBearingDeg": 355.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "gleesons-of-booterstown-node-1418302667",
+    "name": "Gleesons of Booterstown",
+    "lat": 53.3054689,
+    "lon": -6.197606,
+    "displayLat": 53.3054689,
+    "displayLon": -6.197606,
+    "frontBearingDeg": 294.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "glynn-s-node-2372306728",
+    "name": "Glynn’s",
+    "lat": 53.3555164,
+    "lon": -6.2659646,
+    "displayLat": 53.3555164,
+    "displayLon": -6.2659646,
+    "frontBearingDeg": 22.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "grace-s-node-2885369320",
+    "name": "Grace’s",
+    "lat": 53.3218142,
+    "lon": -6.2664357,
+    "displayLat": 53.3218142,
+    "displayLon": -6.2664357,
+    "frontBearingDeg": 146,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "grain-grill-node-5759625992",
+    "name": "Grain & Grill",
+    "lat": 53.3381976,
+    "lon": -6.2717563,
+    "displayLat": 53.3381976,
+    "displayLon": -6.2717563,
+    "frontBearingDeg": 7.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "grain-grill-bar-node-5590277112",
+    "name": "Grain & Grill Bar",
+    "lat": 53.2840894,
+    "lon": -6.3759556,
+    "displayLat": 53.2840894,
+    "displayLon": -6.3759556,
+    "frontBearingDeg": 31.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "grain-grill-bar-node-5590610025",
+    "name": "Grain & Grill Bar",
+    "lat": 53.3131172,
+    "lon": -6.3929869,
+    "displayLat": 53.3131172,
+    "displayLon": -6.3929869,
+    "frontBearingDeg": 37.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "grain-grill-bar-node-5590594966",
+    "name": "Grain & Grill Bar",
+    "lat": 53.3496315,
+    "lon": -6.2786626,
+    "displayLat": 53.3496315,
+    "displayLon": -6.2786626,
+    "frontBearingDeg": 198,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "grain-grill-bar-node-5590642309",
+    "name": "Grain & Grill Bar",
+    "lat": 53.3435319,
+    "lon": -6.2436233,
+    "displayLat": 53.3435319,
+    "displayLon": -6.2436233,
+    "frontBearingDeg": 282.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "graingers-the-manor-inn-node-775278278",
+    "name": "Graingers The Manor Inn",
+    "lat": 53.4604175,
+    "lon": -6.2449135,
+    "displayLat": 53.4604175,
+    "displayLon": -6.2449135,
+    "frontBearingDeg": 99.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "gravity-bar-node-629750018",
+    "name": "Gravity Bar",
+    "lat": 53.3419024,
+    "lon": -6.286488,
+    "displayLat": 53.3419024,
+    "displayLon": -6.286488,
+    "frontBearingDeg": 90.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "grogans-curated",
+    "name": "Grogan's Castle Lounge",
+    "lat": 53.34398,
+    "lon": -6.26467,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "harbour-bar-node-880923549",
+    "name": "Harbour Bar",
+    "lat": 53.3870047,
+    "lon": -6.0663234,
+    "displayLat": 53.3870047,
+    "displayLon": -6.0663234,
+    "frontBearingDeg": 71.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "hardy-s-bar-bistro-node-597119697",
+    "name": "Hardy’s Bar & Bistro",
+    "lat": 53.2919874,
+    "lon": -6.1341504,
+    "displayLat": 53.2919874,
+    "displayLon": -6.1341504,
+    "frontBearingDeg": 309.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "harkin-s-node-298721803",
+    "name": "Harkin’s",
+    "lat": 53.3424988,
+    "lon": -6.2885248,
+    "displayLat": 53.3424988,
+    "displayLon": -6.2885248,
+    "frontBearingDeg": 91,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "hartstown-house-node-3219472687",
+    "name": "Hartstown House",
+    "lat": 53.3926692,
+    "lon": -6.4197547,
+    "displayLat": 53.3926692,
+    "displayLon": -6.4197547,
+    "frontBearingDeg": 143,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "harty-s-bar-node-12167965955",
+    "name": "Harty's bar",
+    "lat": 53.3430247,
+    "lon": -6.2588249,
+    "displayLat": 53.3430247,
+    "displayLon": -6.2588249,
+    "frontBearingDeg": 18,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "hely-s-bar-node-3676943504",
+    "name": "Hely's Bar",
+    "lat": 53.3440535,
+    "lon": -6.2642601,
+    "displayLat": 53.3440535,
+    "displayLon": -6.2642601,
+    "frontBearingDeg": 270.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "hemidemisemiquaver-bar-node-1711807593",
+    "name": "Hemidemisemiquaver Bar",
+    "lat": 53.3487544,
+    "lon": -6.2285572,
+    "displayLat": 53.3487544,
+    "displayLon": -6.2285572,
+    "frontBearingDeg": 275.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "hogan-s-bar-node-367411336",
+    "name": "Hogan’s Bar",
+    "lat": 53.3419933,
+    "lon": -6.2646102,
+    "displayLat": 53.3419933,
+    "displayLon": -6.2646102,
+    "frontBearingDeg": 299.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "horse-show-house-node-312576602",
+    "name": "Horse Show House",
+    "lat": 53.3285197,
+    "lon": -6.2289281,
+    "displayLat": 53.3285197,
+    "displayLon": -6.2289281,
+    "frontBearingDeg": 204.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "house-dublin-node-4249403390",
+    "name": "House Dublin",
+    "lat": 53.3340014,
+    "lon": -6.2551574,
+    "displayLat": 53.3340014,
+    "displayLon": -6.2551574,
+    "frontBearingDeg": 58,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "howth-yacht-club-node-6796636983",
+    "name": "Howth Yacht Club",
+    "lat": 53.3887912,
+    "lon": -6.0678483,
+    "displayLat": 53.3887912,
+    "displayLon": -6.0678483,
+    "frontBearingDeg": 55.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "huck-s-node-2998757813",
+    "name": "Huck’s",
+    "lat": 53.3359626,
+    "lon": -6.2650767,
+    "displayLat": 53.3359626,
+    "displayLon": -6.2650767,
+    "frontBearingDeg": 255.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "hyde-node-12710702758",
+    "name": "Hyde",
+    "lat": 53.3415541,
+    "lon": -6.2593326,
+    "displayLat": 53.3415541,
+    "displayLon": -6.2593326,
+    "frontBearingDeg": 100.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "idlewild-node-9238631400",
+    "name": "IdleWild",
+    "lat": 53.3420846,
+    "lon": -6.2641425,
+    "displayLat": 53.3420846,
+    "displayLon": -6.2641425,
+    "frontBearingDeg": 217.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "iveagh-bistro-node-12179155624",
+    "name": "Iveagh Bistro",
+    "lat": 53.3480666,
+    "lon": -6.2910693,
+    "displayLat": 53.3480666,
+    "displayLon": -6.2910693,
+    "frontBearingDeg": 180.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "j-p-mooneys-node-434153487",
+    "name": "J P Mooneys",
+    "lat": 53.3421487,
+    "lon": -6.2548436,
+    "displayLat": 53.3421487,
+    "displayLon": -6.2548436,
+    "frontBearingDeg": 19.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "j-m-cleary-node-890854720",
+    "name": "J. & M. Cleary",
+    "lat": 53.3523358,
+    "lon": -6.2495435,
+    "displayLat": 53.3523358,
+    "displayLon": -6.2495435,
+    "frontBearingDeg": 123.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "j-o-connell-node-778699196",
+    "name": "J. O'Connell",
+    "lat": 53.3306448,
+    "lon": -6.2641688,
+    "displayLat": 53.3306448,
+    "displayLon": -6.2641688,
+    "frontBearingDeg": 262.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "j-r-mahon-s-node-11030599280",
+    "name": "J.R. Mahon's",
+    "lat": 53.3470014,
+    "lon": -6.2581487,
+    "displayLat": 53.3470014,
+    "displayLon": -6.2581487,
+    "frontBearingDeg": 340.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "j-t-pims-node-3466369334",
+    "name": "J.T. Pims",
+    "lat": 53.3437155,
+    "lon": -6.2642627,
+    "displayLat": 53.3437155,
+    "displayLon": -6.2642627,
+    "frontBearingDeg": 267.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "jack-o-rourke-s-node-662938466",
+    "name": "Jack O’Rourke’s",
+    "lat": 53.3015086,
+    "lon": -6.1778326,
+    "displayLat": 53.3015086,
+    "displayLon": -6.1778326,
+    "frontBearingDeg": 138,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "jacobs-node-1694469691",
+    "name": "Jacobs",
+    "lat": 53.2805016,
+    "lon": -6.4445633,
+    "displayLat": 53.2805016,
+    "displayLon": -6.4445633,
+    "frontBearingDeg": 46.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "john-clarke-and-sons-node-312566081",
+    "name": "John Clarke and Sons",
+    "lat": 53.3416873,
+    "lon": -6.2275843,
+    "displayLat": 53.3416873,
+    "displayLon": -6.2275843,
+    "frontBearingDeg": 351.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "john-s-bar-haberdashery-node-3125025423",
+    "name": "John's Bar & Haberdashery",
+    "lat": 53.3426862,
+    "lon": -6.2775224,
+    "displayLat": 53.3426862,
+    "displayLon": -6.2775224,
+    "frontBearingDeg": 73.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "k-sixty-seven-node-1560022630",
+    "name": "K Sixty Seven",
+    "lat": 53.4623533,
+    "lon": -6.2179398,
+    "displayLat": 53.4623533,
+    "displayLon": -6.2179398,
+    "frontBearingDeg": 188.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "k-c-r-house-node-2065207024",
+    "name": "K.C.R. House",
+    "lat": 53.3141966,
+    "lon": -6.2964378,
+    "displayLat": 53.3141966,
+    "displayLon": -6.2964378,
+    "frontBearingDeg": 310.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "k67-node-1560022631",
+    "name": "K67",
+    "lat": 53.4626062,
+    "lon": -6.2178791,
+    "displayLat": 53.4626062,
+    "displayLon": -6.2178791,
+    "frontBearingDeg": 20.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "kavanagh-s-node-1593209605",
+    "name": "Kavanagh’s",
+    "lat": 53.3363545,
+    "lon": -6.2728363,
+    "displayLat": 53.3363545,
+    "displayLon": -6.2728363,
+    "frontBearingDeg": 190.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "keavan-s-port-node-10078115749",
+    "name": "Keavan's Port",
+    "lat": 53.3334693,
+    "lon": -6.2651754,
+    "displayLat": 53.3334693,
+    "displayLon": -6.2651754,
+    "frontBearingDeg": 81.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "kehoes-curated",
+    "name": "Kehoe's",
+    "lat": 53.33988,
+    "lon": -6.26077,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "kelly-and-coopers-node-662970909",
+    "name": "Kelly and Coopers",
+    "lat": 53.3010267,
+    "lon": -6.1772278,
+    "displayLat": 53.3010267,
+    "displayLon": -6.1772278,
+    "frontBearingDeg": 79.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "kennedy-s-node-10016178636",
+    "name": "Kennedy's",
+    "lat": 53.3421535,
+    "lon": -6.2507516,
+    "displayLat": 53.3421535,
+    "displayLon": -6.2507516,
+    "frontBearingDeg": 201.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "kennedys-bar-node-3926668805",
+    "name": "Kennedys Bar",
+    "lat": 53.296478,
+    "lon": -6.211426,
+    "displayLat": 53.296478,
+    "displayLon": -6.211426,
+    "frontBearingDeg": 180.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "kenny-s-node-3124957096",
+    "name": "Kenny’s",
+    "lat": 53.3424332,
+    "lon": -6.2944638,
+    "displayLat": 53.3424332,
+    "displayLon": -6.2944638,
+    "frontBearingDeg": 63.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "knights-bar-node-12178058608",
+    "name": "Knights Bar",
+    "lat": 53.364874,
+    "lon": -6.2066272,
+    "displayLat": 53.364874,
+    "displayLon": -6.2066272,
+    "frontBearingDeg": 15.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "kodiak-node-1030106427",
+    "name": "Kodiak",
+    "lat": 53.3218115,
+    "lon": -6.2656362,
+    "displayLat": 53.3218115,
+    "displayLon": -6.2656362,
+    "frontBearingDeg": 251.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "krystle-node-739778204",
+    "name": "Krystle",
+    "lat": 53.3358434,
+    "lon": -6.2635641,
+    "displayLat": 53.3358434,
+    "displayLon": -6.2635641,
+    "frontBearingDeg": 89.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "kyle-s-node-1521660943",
+    "name": "Kyle’s",
+    "lat": 53.3888556,
+    "lon": -6.2008612,
+    "displayLat": 53.3888556,
+    "displayLon": -6.2008612,
+    "frontBearingDeg": 104,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "le-monde-cafe-bar-node-130156802",
+    "name": "Le Monde Café Bar",
+    "lat": 53.3501917,
+    "lon": -6.2527615,
+    "displayLat": 53.3501917,
+    "displayLon": -6.2527615,
+    "frontBearingDeg": 69.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "le-petite-renard-node-13059423001",
+    "name": "Le Petite Renard",
+    "lat": 53.3196604,
+    "lon": -6.2911567,
+    "displayLat": 53.3196604,
+    "displayLon": -6.2911567,
+    "frontBearingDeg": 308,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "leggs-pub-node-4337941791",
+    "name": "Leggs pub",
+    "lat": 53.3341764,
+    "lon": -6.254773,
+    "displayLat": 53.3341764,
+    "displayLon": -6.254773,
+    "frontBearingDeg": 237.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "lemon-duke-node-12416156738",
+    "name": "Lemon & Duke",
+    "lat": 53.3415562,
+    "lon": -6.2591307,
+    "displayLat": 53.3415562,
+    "displayLon": -6.2591307,
+    "frontBearingDeg": 280.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "level-4-nightclub-node-882335486",
+    "name": "Level 4 Nightclub",
+    "lat": 53.287319,
+    "lon": -6.3663674,
+    "displayLat": 53.287319,
+    "displayLon": -6.3663674,
+    "frontBearingDeg": 355,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "lord-edward-curated",
+    "name": "Lord Edward",
+    "lat": 53.34305,
+    "lon": -6.2673,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "love-tempo-node-12101176582",
+    "name": "Love Tempo",
+    "lat": 53.3429245,
+    "lon": -6.2792593,
+    "displayLat": 53.3429245,
+    "displayLon": -6.2792593,
+    "frontBearingDeg": 191.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "lowes-bar-node-358543320",
+    "name": "Lowes Bar",
+    "lat": 53.333764,
+    "lon": -6.2906371,
+    "displayLat": 53.333764,
+    "displayLon": -6.2906371,
+    "frontBearingDeg": 206.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "m-o-loughlin-node-3939811610",
+    "name": "M O'Loughlin",
+    "lat": 53.2939394,
+    "lon": -6.1400615,
+    "displayLat": 53.2939394,
+    "displayLon": -6.1400615,
+    "frontBearingDeg": 36.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "m-o-brien-node-10568217814",
+    "name": "M. O’Brien",
+    "lat": 53.331314,
+    "lon": -6.2516295,
+    "displayLat": 53.331314,
+    "displayLon": -6.2516295,
+    "frontBearingDeg": 181.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "madigan-s-node-467744840",
+    "name": "Madigan’s",
+    "lat": 53.3514196,
+    "lon": -6.2605498,
+    "displayLat": 53.3514196,
+    "displayLon": -6.2605498,
+    "frontBearingDeg": 255.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "madigan-s-bar-grill-node-636958169",
+    "name": "Madigan's Bar & Grill",
+    "lat": 53.3514108,
+    "lon": -6.2497907,
+    "displayLat": 53.3514108,
+    "displayLon": -6.2497907,
+    "frontBearingDeg": 290.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "magic-glasses-node-1326745943",
+    "name": "Magic Glasses",
+    "lat": 53.3374044,
+    "lon": -6.2634682,
+    "displayLat": 53.3374044,
+    "displayLon": -6.2634682,
+    "frontBearingDeg": 357,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "manhattan-node-8521097190",
+    "name": "Manhattan",
+    "lat": 53.3426816,
+    "lon": -6.3564948,
+    "displayLat": 53.3426816,
+    "displayLon": -6.3564948,
+    "frontBearingDeg": 103.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "marble-arch-node-2004488756",
+    "name": "Marble Arch",
+    "lat": 53.3359111,
+    "lon": -6.3120401,
+    "displayLat": 53.3359111,
+    "displayLon": -6.3120401,
+    "frontBearingDeg": 348.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "marino-house-kavanagh-s-node-249426205",
+    "name": "Marino House (Kavanagh's)",
+    "lat": 53.365756,
+    "lon": -6.2288162,
+    "displayLat": 53.365756,
+    "displayLon": -6.2288162,
+    "frontBearingDeg": 288.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "martin-b-slattery-node-560602898",
+    "name": "Martin B. Slattery",
+    "lat": 53.3221545,
+    "lon": -6.26589,
+    "displayLat": 53.3221545,
+    "displayLon": -6.26589,
+    "frontBearingDeg": 177.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mary-mac-s-node-312576904",
+    "name": "Mary Mac’s",
+    "lat": 53.3290475,
+    "lon": -6.2303733,
+    "displayLat": 53.3290475,
+    "displayLon": -6.2303733,
+    "frontBearingDeg": 209.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mary-s-bar-hardware-shop-node-6245890989",
+    "name": "Mary’s Bar & Hardware Shop",
+    "lat": 53.3428631,
+    "lon": -6.2603751,
+    "displayLat": 53.3428631,
+    "displayLon": -6.2603751,
+    "frontBearingDeg": 202.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mccloskeys-node-479092745",
+    "name": "McCloskeys",
+    "lat": 53.3244334,
+    "lon": -6.2404236,
+    "displayLat": 53.3244334,
+    "displayLon": -6.2404236,
+    "frontBearingDeg": 49.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mcdowell-s-node-1416582578",
+    "name": "McDowell’s",
+    "lat": 53.3402486,
+    "lon": -6.3168219,
+    "displayLat": 53.3402486,
+    "displayLon": -6.3168219,
+    "frontBearingDeg": 163.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mcgarry-s-bar-node-415802976",
+    "name": "McGarry’s Bar",
+    "lat": 53.3216994,
+    "lon": -6.2795312,
+    "displayLat": 53.3216994,
+    "displayLon": -6.2795312,
+    "frontBearingDeg": 84,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mcloughlin-s-node-593844444",
+    "name": "McLoughlin’s",
+    "lat": 53.2900598,
+    "lon": -6.1306744,
+    "displayLat": 53.2900598,
+    "displayLon": -6.1306744,
+    "frontBearingDeg": 305.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mcneill-s-node-941319049",
+    "name": "McNeill’s",
+    "lat": 53.3846515,
+    "lon": -6.0653171,
+    "displayLat": 53.3846515,
+    "displayLon": -6.0653171,
+    "frontBearingDeg": 102.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "metzo-node-6248574948",
+    "name": "Metzo",
+    "lat": 53.3966916,
+    "lon": -6.2637118,
+    "displayLat": 53.3966916,
+    "displayLon": -6.2637118,
+    "frontBearingDeg": 228.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mill-house-node-11975728519",
+    "name": "Mill House",
+    "lat": 53.288397,
+    "lon": -6.2046435,
+    "displayLat": 53.288397,
+    "displayLon": -6.2046435,
+    "frontBearingDeg": 35.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "molloy-s-node-2860454401",
+    "name": "Molloy’s",
+    "lat": 53.3511395,
+    "lon": -6.2513336,
+    "displayLat": 53.3511395,
+    "displayLon": -6.2513336,
+    "frontBearingDeg": 101.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "molloy-s-bar-grill-node-9161175040",
+    "name": "Molloy’s Bar & Grill",
+    "lat": 53.2876286,
+    "lon": -6.359426,
+    "displayLat": 53.2876286,
+    "displayLon": -6.359426,
+    "frontBearingDeg": 249.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "molloy-s-the-foxes-covert-node-390324314",
+    "name": "Molloy’s The Foxes Covert",
+    "lat": 53.2879405,
+    "lon": -6.3594067,
+    "displayLat": 53.2879405,
+    "displayLon": -6.3594067,
+    "frontBearingDeg": 77.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "molly-s-node-10994405522",
+    "name": "Molly's",
+    "lat": 53.3406332,
+    "lon": -6.2744931,
+    "displayLat": 53.3406332,
+    "displayLon": -6.2744931,
+    "frontBearingDeg": 67.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "morrissey-s-node-1426100409",
+    "name": "Morrissey's",
+    "lat": 53.3368452,
+    "lon": -6.2876954,
+    "displayLat": 53.3368452,
+    "displayLon": -6.2876954,
+    "frontBearingDeg": 143.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mother-reilly-s-bar-restaurant-node-3040139014",
+    "name": "Mother Reilly’s Bar & Restaurant",
+    "lat": 53.3207806,
+    "lon": -6.2651459,
+    "displayLat": 53.3207806,
+    "displayLon": -6.2651459,
+    "frontBearingDeg": 341,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "muldowney-s-node-2176085502",
+    "name": "Muldowney’s",
+    "lat": 53.2818989,
+    "lon": -6.4660302,
+    "displayLat": 53.2818989,
+    "displayLon": -6.4660302,
+    "frontBearingDeg": 164.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mullet-s-node-2071381885",
+    "name": "Mullet’s",
+    "lat": 53.3525793,
+    "lon": -6.2493006,
+    "displayLat": 53.3525793,
+    "displayLon": -6.2493006,
+    "frontBearingDeg": 123.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mulligan-and-haines-node-3470507586",
+    "name": "Mulligan and Haines",
+    "lat": 53.3440757,
+    "lon": -6.2634747,
+    "displayLat": 53.3440757,
+    "displayLon": -6.2634747,
+    "frontBearingDeg": 356.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "mulligans-curated",
+    "name": "Mulligan's",
+    "lat": 53.34739,
+    "lon": -6.25998,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "mulvany-s-fingal-house-node-1357039273",
+    "name": "Mulvany’s Fingal House",
+    "lat": 53.419618,
+    "lon": -6.4759508,
+    "displayLat": 53.419618,
+    "displayLon": -6.4759508,
+    "frontBearingDeg": 193.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "murray-s-node-1348370992",
+    "name": "Murray’s",
+    "lat": 53.3525164,
+    "lon": -6.2610978,
+    "displayLat": 53.3525164,
+    "displayLon": -6.2610978,
+    "frontBearingDeg": 253,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "national-concert-hall-bar-node-13294228736",
+    "name": "National Concert Hall Bar",
+    "lat": 53.3346275,
+    "lon": -6.2592462,
+    "displayLat": 53.3346275,
+    "displayLon": -6.2592462,
+    "frontBearingDeg": 120,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "nearys-bar-and-lounge-curated",
+    "name": "Neary’s Bar & Lounge",
+    "lat": 53.3406967,
+    "lon": -6.2611424,
+    "displayLat": 53.3406967,
+    "displayLon": -6.2611424
+  },
+  {
+    "id": "ned-o-shea-s-node-12165523255",
+    "name": "Ned O'Shea's",
+    "lat": 53.3448912,
+    "lon": -6.2759004,
+    "displayLat": 53.3448912,
+    "displayLon": -6.2759004,
+    "frontBearingDeg": 289.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "no-2-node-4386441803",
+    "name": "No. 2",
+    "lat": 53.2882365,
+    "lon": -6.3699037,
+    "displayLat": 53.2882365,
+    "displayLon": -6.3699037,
+    "frontBearingDeg": 185.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "no-27-bar-lounge-node-12170327422",
+    "name": "No. 27 Bar & Lounge",
+    "lat": 53.3390172,
+    "lon": -6.2562314,
+    "displayLat": 53.3390172,
+    "displayLon": -6.2562314,
+    "frontBearingDeg": 296.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "nubar-node-1496775243",
+    "name": "Nubar",
+    "lat": 53.3850696,
+    "lon": -6.2589215,
+    "displayLat": 53.3850696,
+    "displayLon": -6.2589215,
+    "frontBearingDeg": 125.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "o-connell-s-node-880923510",
+    "name": "O’Connell’s",
+    "lat": 53.388225,
+    "lon": -6.0639896,
+    "displayLat": 53.388225,
+    "displayLon": -6.0639896,
+    "frontBearingDeg": 0.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "odonoghues-curated",
+    "name": "O'Donoghue's",
+    "lat": 53.3401,
+    "lon": -6.25936,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "o-dwyer-s-node-452041291",
+    "name": "O’Dwyer’s",
+    "lat": 53.4194358,
+    "lon": -6.4763613,
+    "displayLat": 53.4194358,
+    "displayLon": -6.4763613,
+    "frontBearingDeg": 106.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "o-neill-s-node-2859655009",
+    "name": "O’Neill’s",
+    "lat": 53.3438336,
+    "lon": -6.260743,
+    "displayLat": 53.3438336,
+    "displayLon": -6.260743,
+    "frontBearingDeg": 213.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "o-reilly-s-node-306276661",
+    "name": "O'Reilly's",
+    "lat": 53.3470972,
+    "lon": -6.254074,
+    "displayLat": 53.3470972,
+    "displayLon": -6.254074,
+    "frontBearingDeg": 67.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "o-reilly-s-node-312574927",
+    "name": "O’Reilly’s",
+    "lat": 53.3328247,
+    "lon": -6.2152427,
+    "displayLat": 53.3328247,
+    "displayLon": -6.2152427,
+    "frontBearingDeg": 120.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "o-shea-s-node-1712118211",
+    "name": "O’Shea’s",
+    "lat": 53.3508625,
+    "lon": -6.2542696,
+    "displayLat": 53.3508625,
+    "displayLon": -6.2542696,
+    "frontBearingDeg": 163.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "oak-cafe-bar-node-9350482020",
+    "name": "Oak Cafe Bar",
+    "lat": 53.4262478,
+    "lon": -6.2394173,
+    "displayLat": 53.4262478,
+    "displayLon": -6.2394173,
+    "frontBearingDeg": 26.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "oarsman-node-312565824",
+    "name": "Oarsman",
+    "lat": 53.3416674,
+    "lon": -6.2277525,
+    "displayLat": 53.3416674,
+    "displayLon": -6.2277525,
+    "frontBearingDeg": 351.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "ohana-tiki-bar-node-7138761089",
+    "name": "Ohana Tiki Bar",
+    "lat": 53.3362565,
+    "lon": -6.2634875,
+    "displayLat": 53.3362565,
+    "displayLon": -6.2634875,
+    "frontBearingDeg": 95,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "oil-can-harry-s-node-592066036",
+    "name": "Oil Can Harry's",
+    "lat": 53.3383463,
+    "lon": -6.2432199,
+    "displayLat": 53.3383463,
+    "displayLon": -6.2432199,
+    "frontBearingDeg": 29,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "old-fashioned-sams-curated",
+    "name": "Old Fashioned Sam's",
+    "lat": 53.3364978,
+    "lon": -6.2642589,
+    "displayLat": 53.3364978,
+    "displayLon": -6.2642589
+  },
+  {
+    "id": "olive-green-node-4806183922",
+    "name": "Olive Green",
+    "lat": 53.3362743,
+    "lon": -6.2485692,
+    "displayLat": 53.3362743,
+    "displayLon": -6.2485692,
+    "frontBearingDeg": 47.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "gogartys-curated",
+    "name": "Oliver St. John Gogarty",
+    "lat": 53.34587,
+    "lon": -6.26463,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "ollie-s-lounge-bar-node-504990897",
+    "name": "Ollie's Lounge & Bar",
+    "lat": 53.2767305,
+    "lon": -6.2240158,
+    "displayLat": 53.2767305,
+    "displayLon": -6.2240158,
+    "frontBearingDeg": 255.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "open-gate-brewery-node-5044959521",
+    "name": "Open Gate Brewery",
+    "lat": 53.3432314,
+    "lon": -6.2869606,
+    "displayLat": 53.3432314,
+    "displayLon": -6.2869606,
+    "frontBearingDeg": 327.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "open-gate-taproom-node-9334710259",
+    "name": "Open Gate Taproom",
+    "lat": 53.3432175,
+    "lon": -6.2870532,
+    "displayLat": 53.3432175,
+    "displayLon": -6.2870532,
+    "frontBearingDeg": 34.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "oscars-node-2365544967",
+    "name": "Oscars",
+    "lat": 53.348862,
+    "lon": -6.2785235,
+    "displayLat": 53.348862,
+    "displayLon": -6.2785235,
+    "frontBearingDeg": 98.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "oscars-christchurch-node-3315487523",
+    "name": "Oscars Christchurch",
+    "lat": 53.3441347,
+    "lon": -6.2697764,
+    "displayLat": 53.3441347,
+    "displayLon": -6.2697764,
+    "frontBearingDeg": 303.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "p-duggan-s-node-6969068085",
+    "name": "P. Duggan’s",
+    "lat": 53.3481815,
+    "lon": -6.2932243,
+    "displayLat": 53.3481815,
+    "displayLon": -6.2932243,
+    "frontBearingDeg": 184.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "paddy-cullen-node-312576639",
+    "name": "Paddy Cullen",
+    "lat": 53.3290182,
+    "lon": -6.230281,
+    "displayLat": 53.3290182,
+    "displayLon": -6.230281,
+    "frontBearingDeg": 209.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "padraig-pearse-node-303968050",
+    "name": "Padraig Pearse",
+    "lat": 53.3433493,
+    "lon": -6.2447418,
+    "displayLat": 53.3433493,
+    "displayLon": -6.2447418,
+    "frontBearingDeg": 141.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "paidi-ogs-node-658999927",
+    "name": "Paidi Ogs",
+    "lat": 53.4027495,
+    "lon": -6.3974174,
+    "displayLat": 53.4027495,
+    "displayLon": -6.3974174,
+    "frontBearingDeg": 213.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "palmerstown-house-node-132811831",
+    "name": "Palmerstown House",
+    "lat": 53.356444,
+    "lon": -6.3706215,
+    "displayLat": 53.356444,
+    "displayLon": -6.3706215,
+    "frontBearingDeg": 25.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "pat-hanway-node-4223248090",
+    "name": "Pat Hanway",
+    "lat": 53.356763,
+    "lon": -6.263144,
+    "displayLat": 53.356763,
+    "displayLon": -6.263144,
+    "frontBearingDeg": 296.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "peacocks-steakhouse-node-1560022633",
+    "name": "Peacocks Steakhouse",
+    "lat": 53.4527893,
+    "lon": -6.2433328,
+    "displayLat": 53.4527893,
+    "displayLon": -6.2433328,
+    "frontBearingDeg": 47.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "peadar-browns-node-583257143",
+    "name": "Peadar Browns",
+    "lat": 53.3362336,
+    "lon": -6.2734533,
+    "displayLat": 53.3362336,
+    "displayLon": -6.2734533,
+    "frontBearingDeg": 44.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "peadar-kearney-s-node-2386542318",
+    "name": "Peadar Kearney's",
+    "lat": 53.3442729,
+    "lon": -6.265415,
+    "displayLat": 53.3442729,
+    "displayLon": -6.265415,
+    "frontBearingDeg": 180.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "pebble-beach-node-1521601306",
+    "name": "Pebble Beach",
+    "lat": 53.3594872,
+    "lon": -6.1896797,
+    "displayLat": 53.3594872,
+    "displayLon": -6.1896797,
+    "frontBearingDeg": 357.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "peggy-kelly-s-node-3005899379",
+    "name": "Peggy Kelly’s",
+    "lat": 53.3237548,
+    "lon": -6.278506,
+    "displayLat": 53.3237548,
+    "displayLon": -6.278506,
+    "frontBearingDeg": 3.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "phibsborough-house-node-698087515",
+    "name": "Phibsborough House",
+    "lat": 53.3588257,
+    "lon": -6.2734242,
+    "displayLat": 53.3588257,
+    "displayLon": -6.2734242,
+    "frontBearingDeg": 196.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "pillar-bar-node-1348371058",
+    "name": "Pillar Bar",
+    "lat": 53.3465755,
+    "lon": -6.2587894,
+    "displayLat": 53.3465755,
+    "displayLon": -6.2587894,
+    "frontBearingDeg": 46.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "point-a-hotel-bar-node-12601007283",
+    "name": "Point A Hotel Bar",
+    "lat": 53.3517334,
+    "lon": -6.2627375,
+    "displayLat": 53.3517334,
+    "displayLon": -6.2627375,
+    "frontBearingDeg": 313.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "porters-node-1361340484",
+    "name": "Porters",
+    "lat": 53.3354316,
+    "lon": -6.2649572,
+    "displayLat": 53.3354316,
+    "displayLon": -6.2649572,
+    "frontBearingDeg": 0.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "powerhouse-bar-and-cocktail-village-node-9984256982",
+    "name": "Powerhouse Bar and Cocktail Village",
+    "lat": 53.3438898,
+    "lon": -6.2857093,
+    "displayLat": 53.3438898,
+    "displayLon": -6.2857093,
+    "frontBearingDeg": 173.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "premier-bar-node-4021198488",
+    "name": "Premier Bar",
+    "lat": 53.3819717,
+    "lon": -6.2917626,
+    "displayLat": 53.3819717,
+    "displayLon": -6.2917626,
+    "frontBearingDeg": 66.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "pye-node-11572594365",
+    "name": "Pye",
+    "lat": 53.289046,
+    "lon": -6.243152,
+    "displayLat": 53.289046,
+    "displayLon": -6.243152,
+    "frontBearingDeg": 248.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "pygmalion-node-907142997",
+    "name": "Pygmalion",
+    "lat": 53.342172,
+    "lon": -6.2623045,
+    "displayLat": 53.342172,
+    "displayLon": -6.2623045,
+    "frontBearingDeg": 201.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "quarry-house-node-1484713985",
+    "name": "Quarry House",
+    "lat": 53.382084,
+    "lon": -6.2767253,
+    "displayLat": 53.382084,
+    "displayLon": -6.2767253,
+    "frontBearingDeg": 80.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "quinn-s-node-13103448936",
+    "name": "Quinn's",
+    "lat": 53.3635433,
+    "lon": -6.258056,
+    "displayLat": 53.3635433,
+    "displayLon": -6.258056,
+    "frontBearingDeg": 118.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "r-mcsorley-s-node-543384713",
+    "name": "R. McSorley’s",
+    "lat": 53.3233007,
+    "lon": -6.2500808,
+    "displayLat": 53.3233007,
+    "displayLon": -6.2500808,
+    "frontBearingDeg": 33.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "r-i-o-t-node-5367355656",
+    "name": "r.i.o.t.",
+    "lat": 53.3462583,
+    "lon": -6.2615322,
+    "displayLat": 53.3462583,
+    "displayLon": -6.2615322,
+    "frontBearingDeg": 338.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "raheny-united-clubhouse-bar-node-9352848206",
+    "name": "Raheny United Clubhouse Bar",
+    "lat": 53.378369,
+    "lon": -6.1791168,
+    "displayLat": 53.378369,
+    "displayLon": -6.1791168,
+    "frontBearingDeg": 107.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "rascals-hq-node-9322108900",
+    "name": "Rascals HQ",
+    "lat": 53.3359672,
+    "lon": -6.3240536,
+    "displayLat": 53.3359672,
+    "displayLon": -6.3240536,
+    "frontBearingDeg": 292,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "river-bar-node-677596888",
+    "name": "River Bar",
+    "lat": 53.3469048,
+    "lon": -6.2584016,
+    "displayLat": 53.3469048,
+    "displayLon": -6.2584016,
+    "frontBearingDeg": 342.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "robert-reade-bar-and-cafe-node-4770224022",
+    "name": "Robert Reade Bar and Cafe",
+    "lat": 53.3513605,
+    "lon": -6.2513919,
+    "displayLat": 53.3513605,
+    "displayLon": -6.2513919,
+    "frontBearingDeg": 163.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "rody-boland-s-node-3040092718",
+    "name": "Rody Boland’s",
+    "lat": 53.3211247,
+    "lon": -6.2654634,
+    "displayLat": 53.3211247,
+    "displayLon": -6.2654634,
+    "frontBearingDeg": 249.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "rory-o-connor-s-node-1500501221",
+    "name": "Rory O'Connor's",
+    "lat": 53.3159336,
+    "lon": -6.3173081,
+    "displayLat": 53.3159336,
+    "displayLon": -6.3173081,
+    "frontBearingDeg": 94.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "sadlier-bar-node-508498981",
+    "name": "Sadlier Bar",
+    "lat": 53.4169718,
+    "lon": -6.4777387,
+    "displayLat": 53.4169718,
+    "displayLon": -6.4777387,
+    "frontBearingDeg": 116,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "sanctuary-node-1171865905",
+    "name": "Sanctuary",
+    "lat": 53.3955297,
+    "lon": -6.3898787,
+    "displayLat": 53.3955297,
+    "displayLon": -6.3898787,
+    "frontBearingDeg": 177.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "sandymount-house-node-312574900",
+    "name": "Sandymount House",
+    "lat": 53.3323885,
+    "lon": -6.2152784,
+    "displayLat": 53.3323885,
+    "displayLon": -6.2152784,
+    "frontBearingDeg": 300.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "scholars-node-293524291",
+    "name": "Scholars",
+    "lat": 53.2750936,
+    "lon": -6.3449534,
+    "displayLat": 53.2750936,
+    "displayLon": -6.3449534,
+    "frontBearingDeg": 3.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "seabank-house-node-2065167226",
+    "name": "Seabank House",
+    "lat": 53.3548879,
+    "lon": -6.2291889,
+    "displayLat": 53.3548879,
+    "displayLon": -6.2291889,
+    "frontBearingDeg": 17.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "senior-common-room-node-3163587327",
+    "name": "Senior Common Room",
+    "lat": 53.3448626,
+    "lon": -6.2575823,
+    "displayLat": 53.3448626,
+    "displayLon": -6.2575823,
+    "frontBearingDeg": 2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "silver-granite-node-132814618",
+    "name": "Silver Granite",
+    "lat": 53.3500748,
+    "lon": -6.3774029,
+    "displayLat": 53.3500748,
+    "displayLon": -6.3774029,
+    "frontBearingDeg": 262,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "sin-e-node-305312829",
+    "name": "Sin É",
+    "lat": 53.345976,
+    "lon": -6.2695992,
+    "displayLat": 53.345976,
+    "displayLon": -6.2695992,
+    "frontBearingDeg": 167.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "sinnott-s-node-768231204",
+    "name": "Sinnott’s",
+    "lat": 53.3400902,
+    "lon": -6.2617022,
+    "displayLat": 53.3400902,
+    "displayLon": -6.2617022,
+    "frontBearingDeg": 19.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "slevin-s-node-452041292",
+    "name": "Slevin’s",
+    "lat": 53.4192176,
+    "lon": -6.476446,
+    "displayLat": 53.4192176,
+    "displayLon": -6.476446,
+    "frontBearingDeg": 121.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "smyth-s-node-12543374558",
+    "name": "Smyth’s",
+    "lat": 53.324124,
+    "lon": -6.252349,
+    "displayLat": 53.324124,
+    "displayLon": -6.252349,
+    "frontBearingDeg": 28.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "stella-cocktail-club-node-5245064896",
+    "name": "Stella Cocktail Club",
+    "lat": 53.322389,
+    "lon": -6.2658412,
+    "displayLat": 53.322389,
+    "displayLon": -6.2658412,
+    "frontBearingDeg": 95.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "swift-node-1373919801",
+    "name": "Swift",
+    "lat": 53.3433017,
+    "lon": -6.2810822,
+    "displayLat": 53.3433017,
+    "displayLon": -6.2810822,
+    "frontBearingDeg": 277.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "t-humphrey-s-node-12543374557",
+    "name": "T. Humphrey’s",
+    "lat": 53.3241037,
+    "lon": -6.2522877,
+    "displayLat": 53.3241037,
+    "displayLon": -6.2522877,
+    "frontBearingDeg": 28.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "tailor-s-hall-tavern-node-11621600199",
+    "name": "Tailor's Hall Tavern",
+    "lat": 53.3429288,
+    "lon": -6.2732298,
+    "displayLat": 53.3429288,
+    "displayLon": -6.2732298,
+    "frontBearingDeg": 16.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "tap-brew-node-9526776464",
+    "name": "Tap + Brew",
+    "lat": 53.4304004,
+    "lon": -6.2480084,
+    "displayLat": 53.4304004,
+    "displayLon": -6.2480084,
+    "frontBearingDeg": 185.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "tenters-node-10004624748",
+    "name": "Tenters",
+    "lat": 53.3371366,
+    "lon": -6.2753116,
+    "displayLat": 53.3371366,
+    "displayLon": -6.2753116,
+    "frontBearingDeg": 161.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-abbey-bar-node-11026623981",
+    "name": "The Abbey Bar",
+    "lat": 53.3484357,
+    "lon": -6.25733,
+    "displayLat": 53.3484357,
+    "displayLon": -6.25733,
+    "frontBearingDeg": 257.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-ark-node-132831833",
+    "name": "The Ark",
+    "lat": 53.3541515,
+    "lon": -6.4028674,
+    "displayLat": 53.3541515,
+    "displayLon": -6.4028674,
+    "frontBearingDeg": 122.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bank-on-college-green-curated",
+    "name": "The Bank on College Green",
+    "lat": 53.3440724,
+    "lon": -6.2614784,
+    "displayLat": 53.3440724,
+    "displayLon": -6.2614784
+  },
+  {
+    "id": "the-bar-node-11290217421",
+    "name": "The Bar",
+    "lat": 53.4126589,
+    "lon": -6.2184915,
+    "displayLat": 53.4126589,
+    "displayLon": -6.2184915,
+    "frontBearingDeg": 35.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-bar-with-no-name-node-5678239622",
+    "name": "The Bar With No Name",
+    "lat": 53.3419024,
+    "lon": -6.264235,
+    "displayLat": 53.3419024,
+    "displayLon": -6.264235,
+    "frontBearingDeg": 24.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-barge-node-133193958",
+    "name": "The Barge",
+    "lat": 53.3305512,
+    "lon": -6.2605878,
+    "displayLat": 53.3305512,
+    "displayLon": -6.2605878,
+    "frontBearingDeg": 154.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-barn-house-node-882292497",
+    "name": "The Barn House",
+    "lat": 53.3322249,
+    "lon": -6.2927681,
+    "displayLat": 53.3322249,
+    "displayLon": -6.2927681,
+    "frontBearingDeg": 310.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-berkeley-node-2131267852",
+    "name": "The Berkeley",
+    "lat": 53.3561569,
+    "lon": -6.2678426,
+    "displayLat": 53.3561569,
+    "displayLon": -6.2678426,
+    "frontBearingDeg": 274.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bernard-shaw-curated",
+    "name": "The Bernard Shaw",
+    "lat": 53.3647,
+    "lon": -6.2713612,
+    "displayLat": 53.3647,
+    "displayLon": -6.2713612
+  },
+  {
+    "id": "the-betsy-node-6073174873",
+    "name": "The Betsy",
+    "lat": 53.4582892,
+    "lon": -6.2207557,
+    "displayLat": 53.4582892,
+    "displayLon": -6.2207557,
+    "frontBearingDeg": 107.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-big-romance-node-7017217477",
+    "name": "The Big Romance",
+    "lat": 53.3534835,
+    "lon": -6.2592195,
+    "displayLat": 53.3534835,
+    "displayLon": -6.2592195,
+    "frontBearingDeg": 330.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-big-tree-node-9202222409",
+    "name": "The Big Tree",
+    "lat": 53.3598337,
+    "lon": -6.2608887,
+    "displayLat": 53.3598337,
+    "displayLon": -6.2608887,
+    "frontBearingDeg": 300.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-bird-flanagan-node-358543587",
+    "name": "The Bird Flanagan",
+    "lat": 53.3365462,
+    "lon": -6.299192,
+    "displayLat": 53.3365462,
+    "displayLon": -6.299192,
+    "frontBearingDeg": 80.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-black-lion-node-1811909362",
+    "name": "The Black Lion",
+    "lat": 53.3213469,
+    "lon": -6.3933861,
+    "displayLat": 53.3213469,
+    "displayLon": -6.3933861,
+    "frontBearingDeg": 145.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-black-lion-node-335569489",
+    "name": "The Black Lion",
+    "lat": 53.3395798,
+    "lon": -6.3208057,
+    "displayLat": 53.3395798,
+    "displayLon": -6.3208057,
+    "frontBearingDeg": 193.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-blarney-inn-node-2681367476",
+    "name": "The Blarney Inn",
+    "lat": 53.3421258,
+    "lon": -6.2548307,
+    "displayLat": 53.3421258,
+    "displayLon": -6.2548307,
+    "frontBearingDeg": 19.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "bleeding-horse-curated",
+    "name": "The Bleeding Horse",
+    "lat": 53.33444,
+    "lon": -6.26473,
+    "frontBearingDeg": 0
+  },
+  {
+    "id": "the-bloody-stream-node-368883560",
+    "name": "The Bloody Stream",
+    "lat": 53.3889795,
+    "lon": -6.0743615,
+    "displayLat": 53.3889795,
+    "displayLon": -6.0743615,
+    "frontBearingDeg": 195.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-bottle-boy-node-9122380611",
+    "name": "The Bottle Boy",
+    "lat": 53.3471813,
+    "lon": -6.2325515,
+    "displayLat": 53.3471813,
+    "displayLon": -6.2325515,
+    "frontBearingDeg": 186.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-brazen-head-node-10013398691",
+    "name": "The Brazen Head",
+    "lat": 53.3449368,
+    "lon": -6.2763108,
+    "displayLat": 53.3449368,
+    "displayLon": -6.2763108,
+    "frontBearingDeg": 20.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "brazen-head-curated",
+    "name": "The Brazen Head",
+    "lat": 53.34389,
+    "lon": -6.28633,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "the-bridge-1859-node-4799036110",
+    "name": "The Bridge 1859",
+    "lat": 53.3292911,
+    "lon": -6.2320003,
+    "displayLat": 53.3292911,
+    "displayLon": -6.2320003,
+    "frontBearingDeg": 45.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-bull-castle-bar-node-310408293",
+    "name": "The Bull & Castle Bar",
+    "lat": 53.3434574,
+    "lon": -6.2698697,
+    "displayLat": 53.3434574,
+    "displayLon": -6.2698697,
+    "frontBearingDeg": 256.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-camden-node-739756772",
+    "name": "The Camden",
+    "lat": 53.3360277,
+    "lon": -6.2654765,
+    "displayLat": 53.3360277,
+    "displayLon": -6.2654765,
+    "frontBearingDeg": 81.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-capitol-lounge-node-1146292428",
+    "name": "The Capitol Lounge",
+    "lat": 53.3412928,
+    "lon": -6.2653013,
+    "displayLat": 53.3412928,
+    "displayLon": -6.2653013,
+    "frontBearingDeg": 279,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-carlisle-bar-node-3834934497",
+    "name": "The Carlisle Bar",
+    "lat": 53.2920178,
+    "lon": -6.1303418,
+    "displayLat": 53.2920178,
+    "displayLon": -6.1303418,
+    "frontBearingDeg": 43.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-celt-node-467744856",
+    "name": "The Celt",
+    "lat": 53.3505727,
+    "lon": -6.2548867,
+    "displayLat": 53.3505727,
+    "displayLon": -6.2548867,
+    "frontBearingDeg": 344.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-circular-node-768231917",
+    "name": "The Circular",
+    "lat": 53.336171,
+    "lon": -6.297985,
+    "displayLat": 53.336171,
+    "displayLon": -6.297985,
+    "frontBearingDeg": 293.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-club-node-2457893964",
+    "name": "The Club",
+    "lat": 53.2773116,
+    "lon": -6.1025984,
+    "displayLat": 53.2773116,
+    "displayLon": -6.1025984,
+    "frontBearingDeg": 339.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-clubhouse-node-256258286",
+    "name": "The Clubhouse",
+    "lat": 53.3082485,
+    "lon": -6.22707,
+    "displayLat": 53.3082485,
+    "displayLon": -6.22707,
+    "frontBearingDeg": 280.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "cobblestone-curated",
+    "name": "The Cobblestone",
+    "lat": 53.34836,
+    "lon": -6.28315,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "the-comet-node-1496777115",
+    "name": "The Comet",
+    "lat": 53.388452,
+    "lon": -6.2460311,
+    "displayLat": 53.388452,
+    "displayLon": -6.2460311,
+    "frontBearingDeg": 161.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-concorde-node-1432780731",
+    "name": "The Concorde",
+    "lat": 53.3888986,
+    "lon": -6.1809861,
+    "displayLat": 53.3888986,
+    "displayLon": -6.1809861,
+    "frontBearingDeg": 55.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-croft-node-12051815620",
+    "name": "The Croft",
+    "lat": 53.3774492,
+    "lon": -6.2465241,
+    "displayLat": 53.3774492,
+    "displayLon": -6.2465241,
+    "frontBearingDeg": 201.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-dragon-inn-node-638722447",
+    "name": "The Dragon Inn",
+    "lat": 53.2879375,
+    "lon": -6.3621661,
+    "displayLat": 53.2879375,
+    "displayLon": -6.3621661,
+    "frontBearingDeg": 177.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-dunmore-node-932249376",
+    "name": "The Dunmore",
+    "lat": 53.3242854,
+    "lon": -6.2651445,
+    "displayLat": 53.3242854,
+    "displayLon": -6.2651445,
+    "frontBearingDeg": 275.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-dyflin-bar-node-1326745948",
+    "name": "The Dyflin Bar",
+    "lat": 53.3408345,
+    "lon": -6.2681589,
+    "displayLat": 53.3408345,
+    "displayLon": -6.2681589,
+    "frontBearingDeg": 163.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-eagle-node-598519953",
+    "name": "The Eagle",
+    "lat": 53.2870206,
+    "lon": -6.1231501,
+    "displayLat": 53.2870206,
+    "displayLon": -6.1231501,
+    "frontBearingDeg": 17.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-elphin-node-2004412421",
+    "name": "The Elphin",
+    "lat": 53.3893347,
+    "lon": -6.1236878,
+    "displayLat": 53.3893347,
+    "displayLon": -6.1236878,
+    "frontBearingDeg": 167.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-exchequer-node-768231201",
+    "name": "The Exchequer",
+    "lat": 53.3431203,
+    "lon": -6.263866,
+    "displayLat": 53.3431203,
+    "displayLon": -6.263866,
+    "frontBearingDeg": 87.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-fallow-kitchen-bar-node-12640604521",
+    "name": "The Fallow Kitchen & Bar",
+    "lat": 53.4252151,
+    "lon": -6.2405916,
+    "displayLat": 53.4252151,
+    "displayLon": -6.2405916,
+    "frontBearingDeg": 204.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-findlater-node-2372312459",
+    "name": "The Findlater",
+    "lat": 53.3569746,
+    "lon": -6.2645861,
+    "displayLat": 53.3569746,
+    "displayLon": -6.2645861,
+    "frontBearingDeg": 121.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-forty-foot-node-593844510",
+    "name": "The Forty Foot",
+    "lat": 53.2940117,
+    "lon": -6.1337719,
+    "displayLat": 53.2940117,
+    "displayLon": -6.1337719,
+    "frontBearingDeg": 306.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-forty-four-bar-node-3571512403",
+    "name": "The Forty Four Bar",
+    "lat": 53.4575968,
+    "lon": -6.2210221,
+    "displayLat": 53.4575968,
+    "displayLon": -6.2210221,
+    "frontBearingDeg": 108.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-fourth-corner-node-5866396179",
+    "name": "The Fourth Corner",
+    "lat": 53.3389208,
+    "lon": -6.2722998,
+    "displayLat": 53.3389208,
+    "displayLon": -6.2722998,
+    "frontBearingDeg": 206.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-foxhunter-node-139590769",
+    "name": "The Foxhunter",
+    "lat": 53.3586043,
+    "lon": -6.4188935,
+    "displayLat": 53.3586043,
+    "displayLon": -6.4188935,
+    "frontBearingDeg": 258.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-gallops-node-135547952",
+    "name": "The Gallops",
+    "lat": 53.2582331,
+    "lon": -6.1974199,
+    "displayLat": 53.2582331,
+    "displayLon": -6.1974199,
+    "frontBearingDeg": 210.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-galway-hooker-node-830659393",
+    "name": "The Galway Hooker",
+    "lat": 53.3467462,
+    "lon": -6.2924467,
+    "displayLat": 53.3467462,
+    "displayLon": -6.2924467,
+    "frontBearingDeg": 75.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-gate-clock-node-12455474554",
+    "name": "The Gate Clock",
+    "lat": 53.4263366,
+    "lon": -6.2455787,
+    "displayLat": 53.4263366,
+    "displayLon": -6.2455787,
+    "frontBearingDeg": 120.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "ginger-man-curated",
+    "name": "The Ginger Man",
+    "lat": 53.33742,
+    "lon": -6.24402,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "the-goblet-node-1530024649",
+    "name": "The Goblet",
+    "lat": 53.3803132,
+    "lon": -6.2100929,
+    "displayLat": 53.3803132,
+    "displayLon": -6.2100929,
+    "frontBearingDeg": 41,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-graduate-bar-and-restaurant-node-1263991636",
+    "name": "The Graduate Bar and Restaurant",
+    "lat": 53.2670882,
+    "lon": -6.135798,
+    "displayLat": 53.2670882,
+    "displayLon": -6.135798,
+    "frontBearingDeg": 223.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-grasshoper-inn-node-1204208643",
+    "name": "The Grasshoper Inn",
+    "lat": 53.410787,
+    "lon": -6.4420942,
+    "displayLat": 53.410787,
+    "displayLon": -6.4420942,
+    "frontBearingDeg": 184.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-grattan-node-475642367",
+    "name": "The Grattan",
+    "lat": 53.3394911,
+    "lon": -6.3213412,
+    "displayLat": 53.3394911,
+    "displayLon": -6.3213412,
+    "frontBearingDeg": 117.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-green-room-node-2065157408",
+    "name": "The Green Room",
+    "lat": 53.3498005,
+    "lon": -6.2299289,
+    "displayLat": 53.3498005,
+    "displayLon": -6.2299289,
+    "frontBearingDeg": 6.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "hairy-lemon-curated",
+    "name": "The Hairy Lemon",
+    "lat": 53.33998,
+    "lon": -6.26076,
+    "frontBearingDeg": 0
+  },
+  {
+    "id": "the-halfway-house-node-2004412428",
+    "name": "The Halfway House",
+    "lat": 53.3238179,
+    "lon": -6.328425,
+    "displayLat": 53.3238179,
+    "displayLon": -6.328425,
+    "frontBearingDeg": 122.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-harold-house-node-943350478",
+    "name": "The Harold House",
+    "lat": 53.3300206,
+    "lon": -6.2752027,
+    "displayLat": 53.3300206,
+    "displayLon": -6.2752027,
+    "frontBearingDeg": 276.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-hill-node-1426051344",
+    "name": "The Hill",
+    "lat": 53.3266615,
+    "lon": -6.25838,
+    "displayLat": 53.3266615,
+    "displayLon": -6.25838,
+    "frontBearingDeg": 115.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-horse-shoe-node-2995285120",
+    "name": "The Horse Shoe",
+    "lat": 53.3200915,
+    "lon": -6.3161146,
+    "displayLat": 53.3200915,
+    "displayLon": -6.3161146,
+    "frontBearingDeg": 246.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-hot-sandwich-company-node-6685608660",
+    "name": "The Hot Sandwich Company",
+    "lat": 53.3993112,
+    "lon": -6.1469168,
+    "displayLat": 53.3993112,
+    "displayLon": -6.1469168,
+    "frontBearingDeg": 173.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-hub-the-shaw-arms-node-2004491253",
+    "name": "The Hub (The Shaw Arms)",
+    "lat": 53.3206892,
+    "lon": -6.3162604,
+    "displayLat": 53.3206892,
+    "displayLon": -6.3162604,
+    "frontBearingDeg": 226.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-hut-node-538103859",
+    "name": "The Hut",
+    "lat": 53.3610075,
+    "lon": -6.2725355,
+    "displayLat": 53.3610075,
+    "displayLon": -6.2725355,
+    "frontBearingDeg": 271.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-jar-node-503224354",
+    "name": "The Jar",
+    "lat": 53.3369586,
+    "lon": -6.2657049,
+    "displayLat": 53.3369586,
+    "displayLon": -6.2657049,
+    "frontBearingDeg": 80.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-kingswood-lodge-node-937866728",
+    "name": "The Kingswood Lodge",
+    "lat": 53.3074073,
+    "lon": -6.3672745,
+    "displayLat": 53.3074073,
+    "displayLon": -6.3672745,
+    "frontBearingDeg": 216.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-lamplighter-node-1373979474",
+    "name": "The Lamplighter",
+    "lat": 53.3397428,
+    "lon": -6.2780884,
+    "displayLat": 53.3397428,
+    "displayLon": -6.2780884,
+    "frontBearingDeg": 93.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-landmark-node-911170200",
+    "name": "The Landmark",
+    "lat": 53.3374409,
+    "lon": -6.2659032,
+    "displayLat": 53.3374409,
+    "displayLon": -6.2659032,
+    "frontBearingDeg": 79.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-lark-inn-node-1404763943",
+    "name": "The Lark Inn",
+    "lat": 53.341684,
+    "lon": -6.278673,
+    "displayLat": 53.341684,
+    "displayLon": -6.278673,
+    "frontBearingDeg": 252.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-laurels-node-1811909824",
+    "name": "The Laurels",
+    "lat": 53.3209592,
+    "lon": -6.3929596,
+    "displayLat": 53.3209592,
+    "displayLon": -6.3929596,
+    "frontBearingDeg": 54.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-laurels-node-612427114",
+    "name": "The Laurels",
+    "lat": 53.3079564,
+    "lon": -6.3195456,
+    "displayLat": 53.3079564,
+    "displayLon": -6.3195456,
+    "frontBearingDeg": 147.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-laurence-lounge-node-2689455361",
+    "name": "The Laurence Lounge",
+    "lat": 53.3430467,
+    "lon": -6.3380322,
+    "displayLat": 53.3430467,
+    "displayLon": -6.3380322,
+    "frontBearingDeg": 148.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-legal-eagle-node-2004657419",
+    "name": "The Legal Eagle",
+    "lat": 53.3458363,
+    "lon": -6.2721543,
+    "displayLat": 53.3458363,
+    "displayLon": -6.2721543,
+    "frontBearingDeg": 260.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-leopardstown-inn-node-2625914025",
+    "name": "The Leopardstown Inn",
+    "lat": 53.2792395,
+    "lon": -6.1967897,
+    "displayLat": 53.2792395,
+    "displayLon": -6.1967897,
+    "frontBearingDeg": 185.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "liberty-belle-curated",
+    "name": "The Liberty Belle",
+    "lat": 53.3415819,
+    "lon": -6.2747157,
+    "displayLat": 53.3415819,
+    "displayLon": -6.2747157
+  },
+  {
+    "id": "the-library-bar-node-2940313238",
+    "name": "The Library Bar",
+    "lat": 53.3431428,
+    "lon": -6.2641152,
+    "displayLat": 53.3431428,
+    "displayLon": -6.2641152,
+    "frontBearingDeg": 176.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-library-bar-node-7659422639",
+    "name": "The Library Bar",
+    "lat": 53.2920486,
+    "lon": -6.1302061,
+    "displayLat": 53.2920486,
+    "displayLon": -6.1302061,
+    "frontBearingDeg": 317.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-liquor-rooms-node-4078397589",
+    "name": "The Liquor Rooms",
+    "lat": 53.3453384,
+    "lon": -6.2669388,
+    "displayLat": 53.3453384,
+    "displayLon": -6.2669388,
+    "frontBearingDeg": 346.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-local-node-10745666702",
+    "name": "The Local",
+    "lat": 53.3032488,
+    "lon": -6.2192105,
+    "displayLat": 53.3032488,
+    "displayLon": -6.2192105,
+    "frontBearingDeg": 65.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "long-hall-curated",
+    "name": "The Long Hall",
+    "lat": 53.34307,
+    "lon": -6.2639,
+    "frontBearingDeg": 0
+  },
+  {
+    "id": "the-lord-edward-node-583412899",
+    "name": "The Lord Edward",
+    "lat": 53.3431186,
+    "lon": -6.2700507,
+    "displayLat": 53.3431186,
+    "displayLon": -6.2700507,
+    "frontBearingDeg": 339.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-lord-lucan-node-478929879",
+    "name": "The Lord Lucan",
+    "lat": 53.3413059,
+    "lon": -6.4516682,
+    "displayLat": 53.3413059,
+    "displayLon": -6.4516682,
+    "frontBearingDeg": 279.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-lotts-node-613230592",
+    "name": "The Lotts",
+    "lat": 53.3473835,
+    "lon": -6.2633194,
+    "displayLat": 53.3473835,
+    "displayLon": -6.2633194,
+    "frontBearingDeg": 258.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-lough-inn-node-3909986251",
+    "name": "The Lough Inn",
+    "lat": 53.2466599,
+    "lon": -6.1288753,
+    "displayLat": 53.2466599,
+    "displayLon": -6.1288753,
+    "frontBearingDeg": 31.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-lower-deck-node-279464425",
+    "name": "The Lower Deck",
+    "lat": 53.330686,
+    "lon": -6.2652379,
+    "displayLat": 53.330686,
+    "displayLon": -6.2652379,
+    "frontBearingDeg": 176.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-malt-node-1260538148",
+    "name": "The Malt",
+    "lat": 53.3429392,
+    "lon": -6.291006,
+    "displayLat": 53.3429392,
+    "displayLon": -6.291006,
+    "frontBearingDeg": 342.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-market-bar-node-5155648422",
+    "name": "The Market Bar",
+    "lat": 53.3420522,
+    "lon": -6.2640363,
+    "displayLat": 53.3420522,
+    "displayLon": -6.2640363,
+    "frontBearingDeg": 204.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-merry-cobbler-node-312569935",
+    "name": "The Merry Cobbler",
+    "lat": 53.3385836,
+    "lon": -6.2225999,
+    "displayLat": 53.3385836,
+    "displayLon": -6.2225999,
+    "frontBearingDeg": 303.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-millennium-node-1332272327",
+    "name": "The Millennium",
+    "lat": 53.3480466,
+    "lon": -6.2900462,
+    "displayLat": 53.3480466,
+    "displayLon": -6.2900462,
+    "frontBearingDeg": 83.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-mint-node-12584654956",
+    "name": "The Mint",
+    "lat": 53.3455137,
+    "lon": -6.2582922,
+    "displayLat": 53.3455137,
+    "displayLon": -6.2582922,
+    "frontBearingDeg": 150.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-mint-bar-node-6659452185",
+    "name": "The Mint Bar",
+    "lat": 53.3456553,
+    "lon": -6.2589016,
+    "displayLat": 53.3456553,
+    "displayLon": -6.2589016,
+    "frontBearingDeg": 270.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-mission-node-1326700611",
+    "name": "The Mission",
+    "lat": 53.3470952,
+    "lon": -6.2836885,
+    "displayLat": 53.3470952,
+    "displayLon": -6.2836885,
+    "frontBearingDeg": 236.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-morris-bar-node-12920142701",
+    "name": "The Morris Bar",
+    "lat": 53.3507243,
+    "lon": -6.2553477,
+    "displayLat": 53.3507243,
+    "displayLon": -6.2553477,
+    "frontBearingDeg": 165.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-oasis-bar-grill-node-941285841",
+    "name": "The Oasis Bar & Grill",
+    "lat": 53.4351695,
+    "lon": -6.1239719,
+    "displayLat": 53.4351695,
+    "displayLon": -6.1239719,
+    "frontBearingDeg": 97.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-old-county-node-2066250086",
+    "name": "The Old County",
+    "lat": 53.3273937,
+    "lon": -6.3060022,
+    "displayLat": 53.3273937,
+    "displayLon": -6.3060022,
+    "frontBearingDeg": 186.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-old-mill-node-282917369",
+    "name": "The Old Mill",
+    "lat": 53.2751247,
+    "lon": -6.354174,
+    "displayLat": 53.2751247,
+    "displayLon": -6.354174,
+    "frontBearingDeg": 139.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-old-punch-bowl-node-132228340",
+    "name": "The Old Punch Bowl",
+    "lat": 53.3087656,
+    "lon": -6.1966601,
+    "displayLat": 53.3087656,
+    "displayLon": -6.1966601,
+    "frontBearingDeg": 100.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-old-storehouse-node-467744860",
+    "name": "The Old Storehouse",
+    "lat": 53.3451323,
+    "lon": -6.2626746,
+    "displayLat": 53.3451323,
+    "displayLon": -6.2626746,
+    "frontBearingDeg": 264.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-orchard-node-444529271",
+    "name": "The Orchard",
+    "lat": 53.4712932,
+    "lon": -6.2322338,
+    "displayLat": 53.4712932,
+    "displayLon": -6.2322338,
+    "frontBearingDeg": 282.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "palace-bar-curated",
+    "name": "The Palace Bar",
+    "lat": 53.34561,
+    "lon": -6.26357,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "the-penny-hill-node-263366607",
+    "name": "The Penny Hill",
+    "lat": 53.3473896,
+    "lon": -6.4238869,
+    "displayLat": 53.3473896,
+    "displayLon": -6.4238869,
+    "frontBearingDeg": 201.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-pimlico-tavern-node-1404772647",
+    "name": "The Pimlico Tavern",
+    "lat": 53.3400639,
+    "lon": -6.2807211,
+    "displayLat": 53.3400639,
+    "displayLon": -6.2807211,
+    "frontBearingDeg": 67.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-pines-node-612427116",
+    "name": "The Pines",
+    "lat": 53.3073383,
+    "lon": -6.3188972,
+    "displayLat": 53.3073383,
+    "displayLon": -6.3188972,
+    "frontBearingDeg": 328.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-place-node-5373194431",
+    "name": "The Place",
+    "lat": 53.3516917,
+    "lon": -6.2501036,
+    "displayLat": 53.3516917,
+    "displayLon": -6.2501036,
+    "frontBearingDeg": 113.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "porterhouse-temple-bar-curated",
+    "name": "The Porterhouse Temple Bar",
+    "lat": 53.34556,
+    "lon": -6.26496,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "the-portobello-bar-node-1426048610",
+    "name": "The Portobello Bar",
+    "lat": 53.3303497,
+    "lon": -6.2640955,
+    "displayLat": 53.3303497,
+    "displayLon": -6.2640955,
+    "frontBearingDeg": 175.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-purty-central-node-1811909881",
+    "name": "The Purty Central",
+    "lat": 53.3211955,
+    "lon": -6.3932185,
+    "displayLat": 53.3211955,
+    "displayLon": -6.3932185,
+    "frontBearingDeg": 48.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-purty-kitchen-node-593844518",
+    "name": "The Purty Kitchen",
+    "lat": 53.2951939,
+    "lon": -6.1481504,
+    "displayLat": 53.2951939,
+    "displayLon": -6.1481504,
+    "frontBearingDeg": 73.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-quays-bar-node-559485123",
+    "name": "The Quays Bar",
+    "lat": 53.3456434,
+    "lon": -6.2633552,
+    "displayLat": 53.3456434,
+    "displayLon": -6.2633552,
+    "frontBearingDeg": 266.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-roselawn-inn-node-3718522031",
+    "name": "The Roselawn Inn",
+    "lat": 53.3837011,
+    "lon": -6.38172,
+    "displayLat": 53.3837011,
+    "displayLon": -6.38172,
+    "frontBearingDeg": 73.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-roundabout-node-1529996838",
+    "name": "The Roundabout",
+    "lat": 53.383917,
+    "lon": -6.2068448,
+    "displayLat": 53.383917,
+    "displayLon": -6.2068448,
+    "frontBearingDeg": 138.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-saddle-room-node-5166614627",
+    "name": "The Saddle Room",
+    "lat": 53.3392353,
+    "lon": -6.2561461,
+    "displayLat": 53.3392353,
+    "displayLon": -6.2561461,
+    "frontBearingDeg": 296.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-saint-node-335980359",
+    "name": "The Saint",
+    "lat": 53.3395619,
+    "lon": -6.3186912,
+    "displayLat": 53.3395619,
+    "displayLon": -6.3186912,
+    "frontBearingDeg": 337.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-schooner-bar-node-6676979026",
+    "name": "The Schooner Bar",
+    "lat": 53.3887467,
+    "lon": -6.110215,
+    "displayLat": 53.3887467,
+    "displayLon": -6.110215,
+    "frontBearingDeg": 9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-secret-bar-the-bar-with-no-name-node-583411333",
+    "name": "The Secret Bar / The Bar With No Name",
+    "lat": 53.3418854,
+    "lon": -6.2641559,
+    "displayLat": 53.3418854,
+    "displayLon": -6.2641559,
+    "frontBearingDeg": 24.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-shack-node-1458903111",
+    "name": "The Shack",
+    "lat": 53.2897005,
+    "lon": -6.3650119,
+    "displayLat": 53.2897005,
+    "displayLon": -6.3650119,
+    "frontBearingDeg": 178,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-sin-bin-node-11384483172",
+    "name": "The Sin Bin",
+    "lat": 53.3413348,
+    "lon": -6.2508466,
+    "displayLat": 53.3413348,
+    "displayLon": -6.2508466,
+    "frontBearingDeg": 118.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-skylon-bar-grill-node-491319647",
+    "name": "The Skylon Bar & Grill",
+    "lat": 53.3727647,
+    "lon": -6.253083,
+    "displayLat": 53.3727647,
+    "displayLon": -6.253083,
+    "frontBearingDeg": 112.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-slipper-node-1496722632",
+    "name": "The Slipper",
+    "lat": 53.3853244,
+    "lon": -6.2656088,
+    "displayLat": 53.3853244,
+    "displayLon": -6.2656088,
+    "frontBearingDeg": 95,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-snug-bar-node-5362108727",
+    "name": "The Snug Bar",
+    "lat": 53.341461,
+    "lon": -6.2659913,
+    "displayLat": 53.341461,
+    "displayLon": -6.2659913,
+    "frontBearingDeg": 344.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-south-strand-node-516031805",
+    "name": "The South Strand",
+    "lat": 53.3443491,
+    "lon": -6.2381779,
+    "displayLat": 53.3443491,
+    "displayLon": -6.2381779,
+    "frontBearingDeg": 186.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-square-ball-node-2068246787",
+    "name": "The Square Ball",
+    "lat": 53.340843,
+    "lon": -6.244782,
+    "displayLat": 53.340843,
+    "displayLon": -6.244782,
+    "frontBearingDeg": 26.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "stags-head-curated",
+    "name": "The Stag's Head",
+    "lat": 53.3442,
+    "lon": -6.26668,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "the-steering-wheel-node-1811909944",
+    "name": "The Steering Wheel",
+    "lat": 53.3207853,
+    "lon": -6.3941733,
+    "displayLat": 53.3207853,
+    "displayLon": -6.3941733,
+    "frontBearingDeg": 145.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-stone-boat-node-2065197334",
+    "name": "The Stone Boat",
+    "lat": 53.3206435,
+    "lon": -6.2921726,
+    "displayLat": 53.3206435,
+    "displayLon": -6.2921726,
+    "frontBearingDeg": 230.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-strand-house-node-2071381884",
+    "name": "The Strand House",
+    "lat": 53.3550033,
+    "lon": -6.2460175,
+    "displayLat": 53.3550033,
+    "displayLon": -6.2460175,
+    "frontBearingDeg": 36.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-submarine-node-1500501224",
+    "name": "The Submarine",
+    "lat": 53.3161733,
+    "lon": -6.3173858,
+    "displayLat": 53.3161733,
+    "displayLon": -6.3173858,
+    "frontBearingDeg": 14.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-swan-curated",
+    "name": "The Swan",
+    "lat": 53.3396248,
+    "lon": -6.2655463,
+    "displayLat": 53.3396248,
+    "displayLon": -6.2655463
+  },
+  {
+    "id": "the-temple-node-1349656251",
+    "name": "The Temple",
+    "lat": 53.3573517,
+    "lon": -6.2637116,
+    "displayLat": 53.3573517,
+    "displayLon": -6.2637116,
+    "frontBearingDeg": 26.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "temple-bar-curated",
+    "name": "The Temple Bar",
+    "lat": 53.34552,
+    "lon": -6.26413,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "the-terenure-inn-node-315252689",
+    "name": "The Terenure Inn",
+    "lat": 53.3113561,
+    "lon": -6.2830549,
+    "displayLat": 53.3113561,
+    "displayLon": -6.2830549,
+    "frontBearingDeg": 185.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "thomas-house-curated",
+    "name": "The Thomas House",
+    "lat": 53.3430924,
+    "lon": -6.2769545,
+    "displayLat": 53.3430924,
+    "displayLon": -6.2769545
+  },
+  {
+    "id": "the-twelfth-lock-node-736892767",
+    "name": "The Twelfth Lock",
+    "lat": 53.3821395,
+    "lon": -6.3672381,
+    "displayLat": 53.3821395,
+    "displayLon": -6.3672381,
+    "frontBearingDeg": 353.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-two-foxes-node-658492175",
+    "name": "The Two Foxes",
+    "lat": 53.291744,
+    "lon": -6.1350718,
+    "displayLat": 53.291744,
+    "displayLon": -6.1350718,
+    "frontBearingDeg": 36.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-two-sisters-node-1425374427",
+    "name": "The Two Sisters",
+    "lat": 53.3091194,
+    "lon": -6.305349,
+    "displayLat": 53.3091194,
+    "displayLon": -6.305349,
+    "frontBearingDeg": 40,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-vaults-node-3677094036",
+    "name": "The Vaults",
+    "lat": 53.3513612,
+    "lon": -6.2494796,
+    "displayLat": 53.3513612,
+    "displayLon": -6.2494796,
+    "frontBearingDeg": 146.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-vintage-inn-node-312569767",
+    "name": "The Vintage Inn",
+    "lat": 53.3386881,
+    "lon": -6.2229321,
+    "displayLat": 53.3386881,
+    "displayLon": -6.2229321,
+    "frontBearingDeg": 240,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-waterside-node-639367124",
+    "name": "The Waterside",
+    "lat": 53.3286777,
+    "lon": -6.3964111,
+    "displayLat": 53.3286777,
+    "displayLon": -6.3964111,
+    "frontBearingDeg": 227,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-well-node-6782589728",
+    "name": "The Well",
+    "lat": 53.3395239,
+    "lon": -6.2613297,
+    "displayLat": 53.3395239,
+    "displayLon": -6.2613297,
+    "frontBearingDeg": 117.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-whiskey-reserve-node-11038174107",
+    "name": "The Whiskey Reserve",
+    "lat": 53.3452284,
+    "lon": -6.2642203,
+    "displayLat": 53.3452284,
+    "displayLon": -6.2642203,
+    "frontBearingDeg": 268.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-white-house-node-9518890001",
+    "name": "The White House",
+    "lat": 53.3979933,
+    "lon": -6.1271007,
+    "displayLat": 53.3979933,
+    "displayLon": -6.1271007,
+    "frontBearingDeg": 77.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-wicked-wolf-node-1425999505",
+    "name": "The Wicked Wolf",
+    "lat": 53.3019262,
+    "lon": -6.1780007,
+    "displayLat": 53.3019262,
+    "displayLon": -6.1780007,
+    "frontBearingDeg": 232.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-wild-duck-node-3224845421",
+    "name": "The Wild Duck",
+    "lat": 53.3445718,
+    "lon": -6.2657887,
+    "displayLat": 53.3445718,
+    "displayLon": -6.2657887,
+    "frontBearingDeg": 99.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-willows-node-3705003678",
+    "name": "The Willows",
+    "lat": 53.2842099,
+    "lon": -6.2508159,
+    "displayLat": 53.2842099,
+    "displayLon": -6.2508159,
+    "frontBearingDeg": 79.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "the-wind-jammer-node-282342105",
+    "name": "The Wind Jammer",
+    "lat": 53.3452765,
+    "lon": -6.2483476,
+    "displayLat": 53.3452765,
+    "displayLon": -6.2483476,
+    "frontBearingDeg": 289.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "winding-stair-curated",
+    "name": "The Winding Stair",
+    "lat": 53.34742,
+    "lon": -6.25821,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "the-yacht-node-10136276602",
+    "name": "The Yacht",
+    "lat": 53.3420529,
+    "lon": -6.2274854,
+    "displayLat": 53.3420529,
+    "displayLon": -6.2274854,
+    "frontBearingDeg": 186.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "thomas-clarke-s-node-10275525043",
+    "name": "Thomas Clarke’s",
+    "lat": 53.3525394,
+    "lon": -6.2611108,
+    "displayLat": 53.3525394,
+    "displayLon": -6.2611108,
+    "frontBearingDeg": 253,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "thomas-moore-inn-node-503224346",
+    "name": "Thomas Moore Inn",
+    "lat": 53.3405863,
+    "lon": -6.2654253,
+    "displayLat": 53.3405863,
+    "displayLon": -6.2654253,
+    "frontBearingDeg": 8.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "tim-young-s-node-2612014313",
+    "name": "Tim Young's",
+    "lat": 53.3416494,
+    "lon": -6.3568639,
+    "displayLat": 53.3416494,
+    "displayLon": -6.3568639,
+    "frontBearingDeg": 173.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "token-node-725068375",
+    "name": "Token",
+    "lat": 53.3496181,
+    "lon": -6.2430718,
+    "displayLat": 53.3496181,
+    "displayLon": -6.2430718,
+    "frontBearingDeg": 186.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "tolka-house-node-1423546555",
+    "name": "Tolka House",
+    "lat": 53.3738004,
+    "lon": -6.2689642,
+    "displayLat": 53.3738004,
+    "displayLon": -6.2689642,
+    "frontBearingDeg": 89.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "tom-kennedy-s-node-1403120910",
+    "name": "Tom Kennedy’s",
+    "lat": 53.3427402,
+    "lon": -6.2772127,
+    "displayLat": 53.3427402,
+    "displayLon": -6.2772127,
+    "frontBearingDeg": 73.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "toners-yard-node-13356563701",
+    "name": "Toners Yard",
+    "lat": 53.3375534,
+    "lon": -6.252479,
+    "displayLat": 53.3375534,
+    "displayLon": -6.252479,
+    "frontBearingDeg": 293.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "tower-bar-and-bistro-node-1039619303",
+    "name": "Tower Bar and Bistro",
+    "lat": 53.478949,
+    "lon": -6.11525,
+    "displayLat": 53.478949,
+    "displayLon": -6.11525,
+    "frontBearingDeg": 135.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "trinity-bar-venue-node-1423559526",
+    "name": "Trinity Bar & Venue",
+    "lat": 53.3443282,
+    "lon": -6.2636793,
+    "displayLat": 53.3443282,
+    "displayLon": -6.2636793,
+    "frontBearingDeg": 270.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "trinity-sports-leisure-club-bar-node-598161343",
+    "name": "Trinity Sports & Leisure Club & Bar",
+    "lat": 53.4022449,
+    "lon": -6.1613376,
+    "displayLat": 53.4022449,
+    "displayLon": -6.1613376,
+    "frontBearingDeg": 270.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "ucd-clubhouse-bar-node-4022703882",
+    "name": "UCD Clubhouse Bar",
+    "lat": 53.3081294,
+    "lon": -6.2270405,
+    "displayLat": 53.3081294,
+    "displayLon": -6.2270405,
+    "frontBearingDeg": 191.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "urban-brewing-node-5073432440",
+    "name": "Urban Brewing",
+    "lat": 53.3491172,
+    "lon": -6.2480644,
+    "displayLat": 53.3491172,
+    "displayLon": -6.2480644,
+    "frontBearingDeg": 275.3,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "vaughan-s-eagle-house-node-299224403",
+    "name": "Vaughan’s Eagle House",
+    "lat": 53.3100543,
+    "lon": -6.2832454,
+    "displayLat": 53.3100543,
+    "displayLon": -6.2832454,
+    "frontBearingDeg": 284.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "vertigo-bar-node-3423690446",
+    "name": "Vertigo Bar",
+    "lat": 53.4275084,
+    "lon": -6.2338652,
+    "displayLat": 53.4275084,
+    "displayLon": -6.2338652,
+    "frontBearingDeg": 124.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "vintage-cocktail-club-node-4383657305",
+    "name": "Vintage Cocktail Club",
+    "lat": 53.34503,
+    "lon": -6.2628917,
+    "displayLat": 53.34503,
+    "displayLon": -6.2628917,
+    "frontBearingDeg": 84.1,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "walter-s-node-658492392",
+    "name": "Walter’s",
+    "lat": 53.2897873,
+    "lon": -6.1300465,
+    "displayLat": 53.2897873,
+    "displayLon": -6.1300465,
+    "frontBearingDeg": 216.7,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "whiskey-bread-node-12170276656",
+    "name": "Whiskey Bread",
+    "lat": 53.423262,
+    "lon": -6.244384,
+    "displayLat": 53.423262,
+    "displayLon": -6.244384,
+    "frontBearingDeg": 315.6,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "white-bar-node-3803973848",
+    "name": "White Bar",
+    "lat": 53.3470317,
+    "lon": -6.2376973,
+    "displayLat": 53.3470317,
+    "displayLon": -6.2376973,
+    "frontBearingDeg": 318.8,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "wigwam-node-4998192522",
+    "name": "Wigwam",
+    "lat": 53.3480043,
+    "lon": -6.2621526,
+    "displayLat": 53.3480043,
+    "displayLon": -6.2621526,
+    "frontBearingDeg": 349.4,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "woolshed-baa-grill-node-311099928",
+    "name": "Woolshed Baa & Grill",
+    "lat": 53.3502671,
+    "lon": -6.2674686,
+    "displayLat": 53.3502671,
+    "displayLon": -6.2674686,
+    "frontBearingDeg": 152.5,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "wright-s-cafe-bar-node-913567411",
+    "name": "Wright's Café Bar",
+    "lat": 53.4562481,
+    "lon": -6.2206297,
+    "displayLat": 53.4562481,
+    "displayLon": -6.2206297,
+    "frontBearingDeg": 215.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "xico-node-4396351895",
+    "name": "Xico",
+    "lat": 53.337863,
+    "lon": -6.2527928,
+    "displayLat": 53.337863,
+    "displayLon": -6.2527928,
+    "frontBearingDeg": 21.9,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "zanzibar-locke-bar-node-10765828306",
+    "name": "Zanzibar Locke Bar",
+    "lat": 53.3465593,
+    "lon": -6.2640167,
+    "displayLat": 53.3465593,
+    "displayLon": -6.2640167,
+    "frontBearingDeg": 162.2,
+    "shadeClearanceDeg": 30
+  },
+  {
+    "id": "zozimus-bar-node-6551427836",
+    "name": "Zozimus Bar",
+    "lat": 53.3405771,
+    "lon": -6.2597707,
+    "displayLat": 53.3405771,
+    "displayLon": -6.2597707,
+    "frontBearingDeg": 100.9,
+    "shadeClearanceDeg": 30
+  }
+]

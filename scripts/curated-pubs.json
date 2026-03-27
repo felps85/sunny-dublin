@@ -1,0 +1,246 @@
+[
+  {
+    "id": "blackbird-curated",
+    "name": "Blackbird",
+    "lat": 53.3268571,
+    "lon": -6.264612,
+    "displayLat": 53.3268571,
+    "displayLon": -6.264612
+  },
+  {
+    "id": "bruxelles-curated",
+    "name": "Bruxelles",
+    "lat": 53.3413724,
+    "lon": -6.2608444,
+    "displayLat": 53.3413724,
+    "displayLon": -6.2608444
+  },
+  {
+    "id": "brazen-head-curated",
+    "name": "The Brazen Head",
+    "lat": 53.34389,
+    "lon": -6.28633,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "temple-bar-curated",
+    "name": "The Temple Bar",
+    "lat": 53.34552,
+    "lon": -6.26413,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "palace-bar-curated",
+    "name": "The Palace Bar",
+    "lat": 53.34561,
+    "lon": -6.26357,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "long-hall-curated",
+    "name": "The Long Hall",
+    "lat": 53.34307,
+    "lon": -6.2639,
+    "frontBearingDeg": 0
+  },
+  {
+    "id": "stags-head-curated",
+    "name": "The Stag's Head",
+    "lat": 53.3442,
+    "lon": -6.26668,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "grogans-curated",
+    "name": "Grogan's Castle Lounge",
+    "lat": 53.34398,
+    "lon": -6.26467,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "gogartys-curated",
+    "name": "Oliver St. John Gogarty",
+    "lat": 53.34587,
+    "lon": -6.26463,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "porterhouse-temple-bar-curated",
+    "name": "The Porterhouse Temple Bar",
+    "lat": 53.34556,
+    "lon": -6.26496,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "kehoes-curated",
+    "name": "Kehoe's",
+    "lat": 53.33988,
+    "lon": -6.26077,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "nearys-bar-and-lounge-curated",
+    "name": "Neary’s Bar & Lounge",
+    "lat": 53.3406967,
+    "lon": -6.2611424,
+    "displayLat": 53.3406967,
+    "displayLon": -6.2611424
+  },
+  {
+    "id": "dawson-lounge-curated",
+    "name": "Dawson Lounge",
+    "lat": 53.33937,
+    "lon": -6.25974,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "devitts-curated",
+    "name": "Devitt's",
+    "lat": 53.3355526,
+    "lon": -6.2655319,
+    "displayLat": 53.3355526,
+    "displayLon": -6.2655319
+  },
+  {
+    "id": "hairy-lemon-curated",
+    "name": "The Hairy Lemon",
+    "lat": 53.33998,
+    "lon": -6.26076,
+    "frontBearingDeg": 0
+  },
+  {
+    "id": "ginger-man-curated",
+    "name": "The Ginger Man",
+    "lat": 53.33742,
+    "lon": -6.24402,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "bank-on-college-green-curated",
+    "name": "The Bank on College Green",
+    "lat": 53.3440724,
+    "lon": -6.2614784,
+    "displayLat": 53.3440724,
+    "displayLon": -6.2614784
+  },
+  {
+    "id": "winding-stair-curated",
+    "name": "The Winding Stair",
+    "lat": 53.34742,
+    "lon": -6.25821,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "cobblestone-curated",
+    "name": "The Cobblestone",
+    "lat": 53.34836,
+    "lon": -6.28315,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "delaneys-curated",
+    "name": "Delaney's",
+    "lat": 53.34644,
+    "lon": -6.26195,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "doheny-and-nesbitt-curated",
+    "name": "Doheny and Nesbitt",
+    "lat": 53.338089,
+    "lon": -6.2528851,
+    "displayLat": 53.338089,
+    "displayLon": -6.2528851
+  },
+  {
+    "id": "bleeding-horse-curated",
+    "name": "The Bleeding Horse",
+    "lat": 53.33444,
+    "lon": -6.26473,
+    "frontBearingDeg": 0
+  },
+  {
+    "id": "bernard-shaw-curated",
+    "name": "The Bernard Shaw",
+    "lat": 53.3647,
+    "lon": -6.2713612,
+    "displayLat": 53.3647,
+    "displayLon": -6.2713612
+  },
+  {
+    "id": "dudleys-curated",
+    "name": "Dudley’s",
+    "lat": 53.3426549,
+    "lon": -6.2789448,
+    "displayLat": 53.3426549,
+    "displayLon": -6.2789448
+  },
+  {
+    "id": "odonoghues-curated",
+    "name": "O'Donoghue's",
+    "lat": 53.3401,
+    "lon": -6.25936,
+    "frontBearingDeg": 270
+  },
+  {
+    "id": "mulligans-curated",
+    "name": "Mulligan's",
+    "lat": 53.34739,
+    "lon": -6.25998,
+    "frontBearingDeg": 180
+  },
+  {
+    "id": "old-fashioned-sams-curated",
+    "name": "Old Fashioned Sam's",
+    "lat": 53.3364978,
+    "lon": -6.2642589,
+    "displayLat": 53.3364978,
+    "displayLon": -6.2642589
+  },
+  {
+    "id": "the-swan-curated",
+    "name": "The Swan",
+    "lat": 53.3396248,
+    "lon": -6.2655463,
+    "displayLat": 53.3396248,
+    "displayLon": -6.2655463
+  },
+  {
+    "id": "arthurs-curated",
+    "name": "Arthur’s",
+    "lat": 53.3431265,
+    "lon": -6.2817019,
+    "displayLat": 53.3431265,
+    "displayLon": -6.2817019
+  },
+  {
+    "id": "liberty-belle-curated",
+    "name": "The Liberty Belle",
+    "lat": 53.3415819,
+    "lon": -6.2747157,
+    "displayLat": 53.3415819,
+    "displayLon": -6.2747157
+  },
+  {
+    "id": "thomas-house-curated",
+    "name": "The Thomas House",
+    "lat": 53.3430924,
+    "lon": -6.2769545,
+    "displayLat": 53.3430924,
+    "displayLon": -6.2769545
+  },
+  {
+    "id": "lord-edward-curated",
+    "name": "Lord Edward",
+    "lat": 53.34305,
+    "lon": -6.2673,
+    "frontBearingDeg": 90
+  },
+  {
+    "id": "cassidys-curated",
+    "name": "Cassidy's",
+    "lat": 53.35222,
+    "lon": -6.26085,
+    "frontBearingDeg": 180
+  }
+]
