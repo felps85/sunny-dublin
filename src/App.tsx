@@ -108,6 +108,7 @@ export default function App() {
   const [quickFilter, setQuickFilter] = useState<"all" | "sunny">("all");
   const [pubs, setPubs] = useState<Pub[]>(SEED_PUBS);
   const [selectedId, setSelectedId] = useState<string | null>(initialViewRef.current.selectedId ?? null);
+  const [showUserLocationPopover, setShowUserLocationPopover] = useState(false);
   const [selectedRecenterTick, setSelectedRecenterTick] = useState(0);
   const [userRecenterTick, setUserRecenterTick] = useState(0);
   const [bearingOverrides, setBearingOverrides] = useState<Record<string, number>>({});
@@ -342,6 +343,22 @@ export default function App() {
     return sunnyIntervalsFromHours(samples);
   }, [effectivePreviewTime, forecast, selectedBearing, selectedPub, selectedShadeClearanceDeg]);
 
+  const userLocationIntervals = useMemo(() => {
+    if (!userLocation || !forecast) return null;
+    const times = makeTimeGrid({ start: effectivePreviewTime, minutesStep: 10, steps: 48 * 6 });
+    const samples = computeGeneralSunnySamples({
+      pub: {
+        id: "user-location",
+        name: "Your location",
+        lat: userLocation.lat,
+        lon: userLocation.lon
+      },
+      forecast,
+      times
+    });
+    return sunnyIntervalsFromHours(samples);
+  }, [effectivePreviewTime, forecast, userLocation]);
+
   const selectedSunBearing = useMemo(() => {
     if (!selectedPub) return undefined;
     const pos = SunCalc.getPosition(effectivePreviewTime, selectedPub.lat, selectedPub.lon);
@@ -420,7 +437,7 @@ export default function App() {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destination)}`;
   }, [selectedDisplayPoint, selectedPub, userLocation]);
 
-  const selectedPopover = selectedPub ? (
+  const pubPopover = selectedPub ? (
     <section className="mapPopoverCard" aria-label="Selected pub details">
       <div className="overlayHeader">
         <div>
@@ -470,6 +487,55 @@ export default function App() {
       </div>
     </section>
   ) : null;
+
+  const userLocationPopover = showUserLocationPopover && userLocation ? (
+    <section className="mapPopoverCard" aria-label="Your location details">
+      <div className="overlayHeader">
+        <div>
+          <h2>Your location</h2>
+          <div className="sub">
+            {userLocation.lat.toFixed(5)}, {userLocation.lon.toFixed(5)}
+          </div>
+        </div>
+      </div>
+      <div className="overlayBody">
+        {!forecast ? (
+          <div className="popoverStatusText">Loading forecast…</div>
+        ) : userLocationIntervals && userLocationIntervals.length ? (
+          <div className="row">
+            <div className="label">Next sunny times</div>
+            <div className="times">
+              {userLocationIntervals.slice(0, 6).map((it) => (
+                <div className="timeChip" key={it.start.toISOString()}>
+                  <span>
+                    <strong>{formatDublinTime(it.start)}</strong> → {formatDublinTime(it.end)}
+                  </span>
+                  <button
+                    type="button"
+                    className="pill sunny pillButton"
+                    onClick={() => {
+                      setPreviewTime(new Date(it.start));
+                      setShowTimeSlider(false);
+                      setShowDrawer(false);
+                    }}
+                    aria-label={`Jump preview time to ${formatDublinTime(it.start)}`}
+                    title={`Jump to ${formatDublinTime(it.start)}`}
+                  >
+                    sunny
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="popoverStatusText">No sunny windows in next 48h</div>
+        )}
+      </div>
+    </section>
+  ) : null;
+
+  const activePopover = showUserLocationPopover ? userLocationPopover : pubPopover;
+  const activePopoverAnchor = showUserLocationPopover ? userLocation ?? undefined : selectedDisplayPoint;
 
   const filteredPanelPubs = useMemo(() => {
     return (
@@ -535,6 +601,20 @@ export default function App() {
     }
   }
 
+  function handleSelectPub(id: string) {
+    setSelectedId(id);
+    setShowUserLocationPopover(false);
+  }
+
+  function handleSelectUserLocation() {
+    if (!userLocation) return;
+    setSelectedId(null);
+    setShowUserLocationPopover(true);
+    setShowDrawer(false);
+    setShowTimeSlider(false);
+    setUserRecenterTick((value) => value + 1);
+  }
+
   function handleSearchActivate() {
     setShowDrawer(true);
     setShowTimeSlider(false);
@@ -557,11 +637,16 @@ export default function App() {
             pubs={pubsSorted}
             selectedPub={selectedPub}
             selectedAnchor={selectedDisplayPoint}
+            popoverAnchor={activePopoverAnchor}
             selectedRecenterTick={selectedRecenterTick}
-            onClosePopover={() => setSelectedId(null)}
-            onSelect={setSelectedId}
+            onClosePopover={() => {
+              setSelectedId(null);
+              setShowUserLocationPopover(false);
+            }}
+            onSelect={handleSelectPub}
+            onSelectUserLocation={handleSelectUserLocation}
             status={pubStatus}
-            selectedPopover={selectedPopover}
+            selectedPopover={activePopover}
             userLocation={userLocation}
             userRecenterTick={userRecenterTick}
             selectedSunBearingDeg={selectedSunBearing}
@@ -655,7 +740,7 @@ export default function App() {
                             key={pub.id}
                             className={`searchResultRow ${pub.id === selectedId ? "active" : ""}`}
                             onClick={() => {
-                              setSelectedId(pub.id);
+                              handleSelectPub(pub.id);
                               setShowDrawer(false);
                             }}
                           >

@@ -31,9 +31,11 @@ export default function PubMap(props: {
   pubs: Pub[];
   selectedPub?: Pub | null;
   selectedAnchor?: LatLon;
+  popoverAnchor?: LatLon;
   selectedRecenterTick?: number;
   onClosePopover?: () => void;
   onSelect: (id: string) => void;
+  onSelectUserLocation?: () => void;
   status: Map<string, "sunny" | "not" | "unknown">;
   selectedPopover?: React.ReactNode;
   userLocation?: { lat: number; lon: number } | null;
@@ -75,13 +77,13 @@ export default function PubMap(props: {
 
   const updateSelectedPopoverPosition = useCallback(() => {
     const map = mapRef.current;
-    if (!map || !selectedPub || !props.selectedPopover) {
+    const activeAnchor = props.popoverAnchor ?? (selectedPub ? props.selectedAnchor ?? getPubAnchorLatLon(selectedPub) : undefined);
+    if (!map || !activeAnchor || !props.selectedPopover) {
       setPopoverStyle(null);
       return;
     }
 
-    const anchor = props.selectedAnchor ?? getPubAnchorLatLon(selectedPub);
-    const point = map.project([anchor.lon, anchor.lat]);
+    const point = map.project([activeAnchor.lon, activeAnchor.lat]);
     const mapRect = map.getContainer().getBoundingClientRect();
     const topPanel = document.querySelector(".topPanel");
     const reservedTop = topPanel ? topPanel.getBoundingClientRect().bottom - mapRect.top + 12 : 96;
@@ -98,7 +100,7 @@ export default function PubMap(props: {
 
     setPopoverPlacement(placement);
     setPopoverStyle({ left, top });
-  }, [props.selectedAnchor, props.selectedPopover, selectedPub]);
+  }, [props.popoverAnchor, props.selectedAnchor, props.selectedPopover, selectedPub]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -159,7 +161,7 @@ export default function PubMap(props: {
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !selectedPub || !props.selectedPopover) {
+    if (!map || !props.selectedPopover) {
       setPopoverStyle(null);
       return;
     }
@@ -178,10 +180,10 @@ export default function PubMap(props: {
       map.off("move", update);
       map.off("resize", update);
     };
-  }, [props.selectedPopover, selectedPub, updateSelectedPopoverPosition]);
+  }, [props.selectedPopover, updateSelectedPopoverPosition]);
 
   useEffect(() => {
-    if (!selectedPub || !props.selectedPopover || !props.onClosePopover) return;
+    if (!props.selectedPopover || !props.onClosePopover) return;
 
     const onPointerDown = (event: PointerEvent) => {
       const target = event.target;
@@ -194,7 +196,7 @@ export default function PubMap(props: {
     return () => {
       document.removeEventListener("pointerdown", onPointerDown);
     };
-  }, [props.onClosePopover, props.selectedPopover, selectedPub]);
+  }, [props.onClosePopover, props.selectedPopover]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -237,7 +239,7 @@ export default function PubMap(props: {
       <div className="mapAttributionText" aria-hidden="true">
         © OpenStreetMap contributors © CARTO | MapLibre
       </div>
-      {selectedPub && props.selectedPopover && popoverStyle ? (
+      {props.selectedPopover && popoverStyle ? (
         <div
           ref={popoverRef}
           className={`mapPinPopover ${popoverPlacement}`}
@@ -311,6 +313,7 @@ function registerPubPinInteractions(
     selectedAnchor?: LatLon;
     selectedRecenterTick?: number;
     onSelect: (id: string) => void;
+    onSelectUserLocation?: () => void;
     status: Map<string, "sunny" | "not" | "unknown">;
     userLocation?: { lat: number; lon: number } | null;
     selectedSunBearingDeg?: number;
@@ -330,10 +333,15 @@ function registerPubPinInteractions(
 
   map.on("click", "pub-pins-layer", clickHandler);
   map.on("click", "selected-pub-pin-layer", clickHandler);
+  map.on("click", "user-location-layer", () => {
+    latestPropsRef.current.onSelectUserLocation?.();
+  });
   map.on("mouseenter", "pub-pins-layer", enterHandler);
   map.on("mouseenter", "selected-pub-pin-layer", enterHandler);
+  map.on("mouseenter", "user-location-layer", enterHandler);
   map.on("mouseleave", "pub-pins-layer", leaveHandler);
   map.on("mouseleave", "selected-pub-pin-layer", leaveHandler);
+  map.on("mouseleave", "user-location-layer", leaveHandler);
 }
 
 function ensurePubPinLayers(map: MapLibreMap) {
