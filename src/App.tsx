@@ -20,6 +20,20 @@ const DUBLIN_CENTER = { lat: 53.3498, lon: -6.2603 };
 const PubMap = lazy(() => import("./components/PubMap"));
 const FORECAST_CACHE_MS = 15 * 60_000;
 const ADDRESS_CACHE_MS = 7 * 24 * 60 * 60_000;
+const SUN_CHASE_CANDIDATE_LIMIT = 80;
+const SUN_CHASE_STOP_LIMIT = 4;
+const SUN_CHASE_MIN_STOP_MINUTES = 15;
+const WALKING_METERS_PER_MINUTE = 80;
+
+type SunChaseStop = {
+  pub: Pub;
+  anchor: LatLon;
+  interval: { start: Date; end: Date };
+  sunnyStart: Date;
+  walkMinutesFromPrev: number;
+  distanceMFromPrev: number;
+  departAt?: Date;
+};
 
 function normalizeForecastRows(rows: ForecastHour[]) {
   return rows.map((row) => ({
@@ -48,18 +62,29 @@ function readStoredUserLocation() {
     : null;
 }
 
-function useForecast(hours: number, refreshKey: number) {
+function makeForecastCacheKey(location: LatLon, hours: number) {
+  const lat = location.lat.toFixed(4);
+  const lon = location.lon.toFixed(4);
+  return `forecast:${lat}:${lon}:${hours}`;
+}
+
+function useForecast(location: LatLon | null, hours: number, refreshKey: number) {
   const [data, setData] = useState<ForecastHour[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!location) {
+      setData(null);
+      setError(null);
+      return;
+    }
     let cancelled = false;
-    const cacheKey = `forecast:${DUBLIN_CENTER.lat}:${DUBLIN_CENTER.lon}:${hours}`;
+    const cacheKey = makeForecastCacheKey(location, hours);
     const cachedRaw = refreshKey === 0 ? readCachedJson<ForecastHour[]>(cacheKey) : undefined;
     const cached = cachedRaw ? normalizeForecastRows(cachedRaw) : undefined;
     setError(null);
     setData(cached ?? null);
-    fetchForecastHourly({ lat: DUBLIN_CENTER.lat, lon: DUBLIN_CENTER.lon, hours })
+    fetchForecastHourly({ lat: location.lat, lon: location.lon, hours })
       .then((rows) => {
         if (!cancelled) {
           const normalized = normalizeForecastRows(rows);
@@ -73,7 +98,7 @@ function useForecast(hours: number, refreshKey: number) {
     return () => {
       cancelled = true;
     };
-  }, [hours, refreshKey]);
+  }, [hours, location, refreshKey]);
 
   return { data, error };
 }
@@ -101,6 +126,38 @@ function parseInitialView() {
   };
 }
 
+function getPubAnchor(pub: Pub): LatLon {
+  if (pub.displayLat !== undefined && pub.displayLon !== undefined) {
+    return { lat: pub.displayLat, lon: pub.displayLon };
+  }
+  return { lat: pub.lat, lon: pub.lon };
+}
+
+function estimateWalkingMinutes(distanceM: number) {
+  return Math.max(2, Math.ceil(distanceM / WALKING_METERS_PER_MINUTE));
+}
+
+function buildGoogleMapsWalkingUrl(origin: LatLon, stops: LatLon[]) {
+  if (!stops.length) return null;
+  const destination = stops[stops.length - 1]!;
+  const params = new URLSearchParams({
+    api: "1",
+    origin: `${origin.lat},${origin.lon}`,
+    destination: `${destination.lat},${destination.lon}`,
+    travelmode: "walking"
+  });
+  if (stops.length > 1) {
+    params.set(
+      "waypoints",
+      stops
+        .slice(0, -1)
+        .map((stop) => `${stop.lat},${stop.lon}`)
+        .join("|")
+    );
+  }
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
 export default function App() {
   const initialViewRef = useRef(parseInitialView());
   const [query, setQuery] = useState("");
@@ -109,15 +166,16 @@ export default function App() {
   const [pubs, setPubs] = useState<Pub[]>(SEED_PUBS);
   const [selectedId, setSelectedId] = useState<string | null>(initialViewRef.current.selectedId ?? null);
   const [showUserLocationPopover, setShowUserLocationPopover] = useState(false);
+  const [showSunChase, setShowSunChase] = useState(false);
   const [selectedRecenterTick, setSelectedRecenterTick] = useState(0);
   const [userRecenterTick, setUserRecenterTick] = useState(0);
   const [bearingOverrides, setBearingOverrides] = useState<Record<string, number>>({});
   const selectedPub = useMemo(() => pubs.find((p) => p.id === selectedId) ?? null, [pubs, selectedId]);
 
   const [forecastRefresh, setForecastRefresh] = useState(0);
-  const { data: forecast, error } = useForecast(48, forecastRefresh);
-
   const [userLocation, setUserLocation] = useState<LatLon | null>(() => readStoredUserLocation());
+  const { data: forecast, error } = useForecast(DUBLIN_CENTER, 48, forecastRefresh);
+  const { data: userForecast, error: userForecastError } = useForecast(userLocation, 48, forecastRefresh);
   const [locError, setLocError] = useState<string | null>(null);
   const [selectedAddress, setSelectedAddress] = useState<string | null>(null);
   const [selectedAddressLoading, setSelectedAddressLoading] = useState(false);
@@ -285,10 +343,7 @@ export default function App() {
   const selectedShadeClearanceDeg = selectedPub ? getPubShadeClearanceDeg(selectedPub) : undefined;
   const selectedDisplayPoint = useMemo<LatLon | undefined>(() => {
     if (!selectedPub) return undefined;
-    if (selectedPub.displayLat !== undefined && selectedPub.displayLon !== undefined) {
-      return { lat: selectedPub.displayLat, lon: selectedPub.displayLon };
-    }
-    return { lat: selectedPub.lat, lon: selectedPub.lon };
+    return getPubAnchor(selectedPub);
   }, [selectedPub]);
 
   const pubStatus = useMemo(() => {
@@ -344,7 +399,7 @@ export default function App() {
   }, [effectivePreviewTime, forecast, selectedBearing, selectedPub, selectedShadeClearanceDeg]);
 
   const userLocationIntervals = useMemo(() => {
-    if (!userLocation || !forecast) return null;
+    if (!userLocation || !userForecast) return null;
     const times = makeTimeGrid({ start: effectivePreviewTime, minutesStep: 10, steps: 48 * 6 });
     const samples = computeGeneralSunnySamples({
       pub: {
@@ -353,11 +408,169 @@ export default function App() {
         lat: userLocation.lat,
         lon: userLocation.lon
       },
-      forecast,
+      forecast: userForecast,
       times
     });
     return sunnyIntervalsFromHours(samples);
-  }, [effectivePreviewTime, forecast, userLocation]);
+  }, [effectivePreviewTime, userForecast, userLocation]);
+
+  const sunChasePlan = useMemo(() => {
+    if (!showSunChase || !selectedPub || !forecast || !selectedDisplayPoint) return null;
+
+    const candidatePubs = [
+      selectedPub,
+      ...pubs
+        .filter((pub) => pub.id !== selectedPub.id)
+        .sort((a, b) => {
+          const distA = haversineDistanceM(selectedDisplayPoint, getPubAnchor(a));
+          const distB = haversineDistanceM(selectedDisplayPoint, getPubAnchor(b));
+          return distA - distB;
+        })
+        .slice(0, SUN_CHASE_CANDIDATE_LIMIT)
+    ];
+
+    const candidateData = candidatePubs
+      .map((pub) => {
+        const bearing = getPubBearing(pub);
+        const intervals =
+          pub.id === selectedPub.id && selectedIntervals
+            ? selectedIntervals
+            : sunnyIntervalsFromHours(
+                bearing !== undefined
+                  ? computeFrontSunnySamples({
+                      pub,
+                      forecast,
+                      times: makeTimeGrid({ start: effectivePreviewTime, minutesStep: 10, steps: 48 * 6 }),
+                      frontBearingDegOverride: bearing,
+                      minSunAltitudeDeg: getPubShadeClearanceDeg(pub)
+                    })
+                  : computeGeneralSunnySamples({
+                      pub,
+                      forecast,
+                      times: makeTimeGrid({ start: effectivePreviewTime, minutesStep: 10, steps: 48 * 6 }),
+                      minSunAltitudeDeg: getPubShadeClearanceDeg(pub)
+                    })
+              );
+        return {
+          pub,
+          anchor: getPubAnchor(pub),
+          intervals: intervals.filter((interval) => interval.end.getTime() > effectivePreviewTime.getTime())
+        };
+      })
+      .filter((candidate) => candidate.intervals.length > 0);
+
+    const findBestStop = (
+      from: LatLon,
+      earliestMs: number,
+      candidates: typeof candidateData
+    ) => {
+      let best:
+        | (SunChaseStop & {
+            sunnyStartMs: number;
+          })
+        | null = null;
+
+      for (const candidate of candidates) {
+        const distanceM = haversineDistanceM(from, candidate.anchor);
+        const walkMinutes = estimateWalkingMinutes(distanceM);
+        const arrivalMs = earliestMs + walkMinutes * 60_000;
+
+        for (const interval of candidate.intervals) {
+          const startMs = interval.start.getTime();
+          const endMs = interval.end.getTime();
+          const sunnyStartMs = Math.max(arrivalMs, startMs);
+          if (endMs - sunnyStartMs < SUN_CHASE_MIN_STOP_MINUTES * 60_000) continue;
+
+          const nextStop: SunChaseStop & { sunnyStartMs: number } = {
+            pub: candidate.pub,
+            anchor: candidate.anchor,
+            interval,
+            sunnyStart: new Date(sunnyStartMs),
+            walkMinutesFromPrev: walkMinutes,
+            distanceMFromPrev: distanceM,
+            sunnyStartMs
+          };
+
+          if (
+            !best ||
+            sunnyStartMs < best.sunnyStartMs ||
+            (sunnyStartMs === best.sunnyStartMs && walkMinutes < best.walkMinutesFromPrev)
+          ) {
+            best = nextStop;
+          }
+          break;
+        }
+      }
+
+      return best;
+    };
+
+    const used = new Set<string>();
+    const stops: SunChaseStop[] = [];
+    const origin = userLocation ?? selectedDisplayPoint;
+    let currentPoint = origin;
+    let currentReadyMs = effectivePreviewTime.getTime();
+
+    const selectedCandidate = candidateData.find((candidate) => candidate.pub.id === selectedPub.id);
+    if (selectedCandidate) {
+      const firstStop = findBestStop(origin, currentReadyMs, [selectedCandidate]);
+      if (firstStop) {
+        used.add(firstStop.pub.id);
+        stops.push(firstStop);
+        currentPoint = firstStop.anchor;
+        currentReadyMs = firstStop.sunnyStart.getTime() + SUN_CHASE_MIN_STOP_MINUTES * 60_000;
+      }
+    }
+
+    while (stops.length < SUN_CHASE_STOP_LIMIT) {
+      const remaining = candidateData.filter((candidate) => !used.has(candidate.pub.id));
+      const nextStop = findBestStop(currentPoint, currentReadyMs, remaining);
+      if (!nextStop) break;
+      used.add(nextStop.pub.id);
+      stops.push(nextStop);
+      currentPoint = nextStop.anchor;
+      currentReadyMs = nextStop.sunnyStart.getTime() + SUN_CHASE_MIN_STOP_MINUTES * 60_000;
+    }
+
+    if (stops.length < 2) return null;
+
+    const adjustedStops = stops.map((stop) => ({ ...stop }));
+
+    if (userLocation && adjustedStops.length) {
+      const first = adjustedStops[0]!;
+      const targetLeaveMs = first.sunnyStart.getTime() - first.walkMinutesFromPrev * 60_000;
+      first.departAt = new Date(Math.max(effectivePreviewTime.getTime(), targetLeaveMs));
+    }
+
+    for (let index = 0; index < adjustedStops.length - 1; index++) {
+      const current = adjustedStops[index]!;
+      const next = adjustedStops[index + 1]!;
+      const earliestLeaveMs = current.sunnyStart.getTime() + SUN_CHASE_MIN_STOP_MINUTES * 60_000;
+      const desiredLeaveMs = next.sunnyStart.getTime() - next.walkMinutesFromPrev * 60_000;
+      current.departAt = new Date(Math.max(earliestLeaveMs, Math.min(current.interval.end.getTime(), desiredLeaveMs)));
+    }
+
+    const routeStops = userLocation
+      ? adjustedStops.map((stop) => stop.anchor)
+      : adjustedStops
+          .filter((stop, index) => !(index === 0 && stop.pub.id === selectedPub.id))
+          .map((stop) => stop.anchor);
+
+    return {
+      stops: adjustedStops,
+      googleMapsUrl: buildGoogleMapsWalkingUrl(origin, routeStops),
+      originIsUserLocation: Boolean(userLocation)
+    };
+  }, [
+    effectivePreviewTime,
+    forecast,
+    pubs,
+    selectedDisplayPoint,
+    selectedIntervals,
+    selectedPub,
+    showSunChase,
+    userLocation
+  ]);
 
   const selectedSunBearing = useMemo(() => {
     if (!selectedPub) return undefined;
@@ -484,6 +697,57 @@ export default function App() {
         ) : (
           <div className="popoverStatusText">No sunny windows in next 48h</div>
         )}
+        <div className="row sunChaseRow">
+          <button
+            type="button"
+            className={`sunChaseToggle ${showSunChase ? "active" : ""}`}
+            onClick={() => setShowSunChase((value) => !value)}
+          >
+            <MaterialIcon name="sunny" size={16} />
+            <span>Follow the sun</span>
+          </button>
+          {showSunChase ? (
+            sunChasePlan ? (
+              <div className="sunChasePlan">
+                <div className="sunChaseHeader">
+                  <span>Sunny pub route</span>
+                  {sunChasePlan.googleMapsUrl ? (
+                    <a
+                      className="miniLinkBtn"
+                      href={sunChasePlan.googleMapsUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <MaterialIcon name="directions" size={14} />
+                      <span>Open route</span>
+                    </a>
+                  ) : null}
+                </div>
+                <div className="sunChaseStops">
+                  {sunChasePlan.stops.map((stop, index) => (
+                    <div className="sunChaseStop" key={`${stop.pub.id}-${stop.interval.start.toISOString()}`}>
+                      <div className="sunChaseStopTop">
+                        <span className="sunChaseIndex">{index + 1}</span>
+                        <span className="sunChaseName">{stop.pub.name}</span>
+                      </div>
+                      <div className="sunChaseMeta">
+                        <strong>{formatDublinTime(stop.sunnyStart)}</strong> → {formatDublinTime(stop.interval.end)}
+                      </div>
+                      <div className="sunChaseMeta">
+                        {index === 0
+                          ? `${sunChasePlan.originIsUserLocation ? `Leave ${formatDublinTime(stop.departAt ?? effectivePreviewTime)}` : "Start here"} · ${stop.walkMinutesFromPrev} min walk`
+                          : `Leave ${formatDublinTime(sunChasePlan.stops[index - 1]!.departAt ?? effectivePreviewTime)} · ${stop.walkMinutesFromPrev} min walk`}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="finePrint">Google Maps opens the walking route. Leave times stay in the app.</div>
+              </div>
+            ) : (
+              <div className="popoverStatusText">Couldn’t build a multi-pub sunny route right now.</div>
+            )
+          ) : null}
+        </div>
       </div>
     </section>
   ) : null;
@@ -499,8 +763,10 @@ export default function App() {
         </div>
       </div>
       <div className="overlayBody">
-        {!forecast ? (
-          <div className="popoverStatusText">Loading forecast…</div>
+        {!userForecast ? (
+          <div className="popoverStatusText">
+            {userForecastError ? "Couldn’t load local forecast right now." : "Loading local forecast…"}
+          </div>
         ) : userLocationIntervals && userLocationIntervals.length ? (
           <div className="row">
             <div className="label">Next sunny times</div>
@@ -604,12 +870,14 @@ export default function App() {
   function handleSelectPub(id: string) {
     setSelectedId(id);
     setShowUserLocationPopover(false);
+    setShowSunChase(false);
   }
 
   function handleSelectUserLocation() {
     if (!userLocation) return;
     setSelectedId(null);
     setShowUserLocationPopover(true);
+    setShowSunChase(false);
     setShowDrawer(false);
     setShowTimeSlider(false);
     setUserRecenterTick((value) => value + 1);
@@ -642,6 +910,7 @@ export default function App() {
             onClosePopover={() => {
               setSelectedId(null);
               setShowUserLocationPopover(false);
+              setShowSunChase(false);
             }}
             onSelect={handleSelectPub}
             onSelectUserLocation={handleSelectUserLocation}

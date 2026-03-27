@@ -905,6 +905,92 @@ input[type="range"] {
   gap: 6px;
 }
 
+.sunChaseRow {
+  margin-top: 4px;
+  gap: 8px;
+}
+
+.sunChaseToggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 34px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 199, 92, 0.18);
+  background: rgba(255, 199, 92, 0.08);
+  color: rgba(255, 226, 165, 0.98);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.sunChaseToggle.active {
+  background: rgba(255, 199, 92, 0.14);
+  border-color: rgba(255, 199, 92, 0.28);
+}
+
+.sunChasePlan {
+  display: grid;
+  gap: 10px;
+  padding-top: 2px;
+}
+
+.sunChaseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.sunChaseStops {
+  display: grid;
+  gap: 8px;
+}
+
+.sunChaseStop {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sunChaseStopTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sunChaseIndex {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 199, 92, 0.18);
+  color: rgba(255, 226, 165, 0.96);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sunChaseName {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.sunChaseMeta {
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.68);
+}
+
 .miniLinkBtn {
   display: inline-flex;
   align-items: center;
